@@ -8,13 +8,33 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface T3Listener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link T3Parser#programa}.
+	 * Enter a parse tree produced by {@link T3Parser#site}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrograma(T3Parser.ProgramaContext ctx);
+	void enterSite(T3Parser.SiteContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link T3Parser#programa}.
+	 * Exit a parse tree produced by {@link T3Parser#site}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrograma(T3Parser.ProgramaContext ctx);
+	void exitSite(T3Parser.SiteContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link T3Parser#parametros}.
+	 * @param ctx the parse tree
+	 */
+	void enterParametros(T3Parser.ParametrosContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link T3Parser#parametros}.
+	 * @param ctx the parse tree
+	 */
+	void exitParametros(T3Parser.ParametrosContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link T3Parser#titulo}.
+	 * @param ctx the parse tree
+	 */
+	void enterTitulo(T3Parser.TituloContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link T3Parser#titulo}.
+	 * @param ctx the parse tree
+	 */
+	void exitTitulo(T3Parser.TituloContext ctx);
 }

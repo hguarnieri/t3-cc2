@@ -31,13 +31,12 @@ WS
     ;
 
 site:
-	'site' ('(' parametros ')')? '{' menu? sidebar? banner? conteudo rodape? '}' EOF;
+	'site' '(' parametros ')';
 
-titulo_site:
-    'titulo' '=' CADEIA;
+parametros:
+    titulo?;
 
 titulo:
-	'titulo' ('(' parametros ')')? '(' CADEIA ')';
-
+    CADEIA;
 
 ERROR: . { throw new ParseCancellationException("Linha " + getLine() + ": "+ getText() +" - simbolo nao identificado"); };

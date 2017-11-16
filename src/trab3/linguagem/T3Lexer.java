@@ -17,8 +17,8 @@ public class T3Lexer extends Lexer {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, IDENT=3, CADEIA=4, NUM_INT=5, NUM_REAL=6, COMENTARIO=7, 
-		COMENTARIOERRO=8, WS=9, ERROR=10;
+		T__0=1, T__1=2, T__2=3, IDENT=4, CADEIA=5, NUM_INT=6, NUM_REAL=7, COMENTARIO=8, 
+		COMENTARIOERRO=9, WS=10, ERROR=11;
 	public static String[] channelNames = {
 		"DEFAULT_TOKEN_CHANNEL", "HIDDEN"
 	};
@@ -28,15 +28,15 @@ public class T3Lexer extends Lexer {
 	};
 
 	public static final String[] ruleNames = {
-		"T__0", "T__1", "IDENT", "CADEIA", "NUM_INT", "NUM_REAL", "COMENTARIO", 
+		"T__0", "T__1", "T__2", "IDENT", "CADEIA", "NUM_INT", "NUM_REAL", "COMENTARIO", 
 		"COMENTARIOERRO", "WS", "ERROR"
 	};
 
 	private static final String[] _LITERAL_NAMES = {
-		null, "'algoritmo'", "'fim_algoritmo'"
+		null, "'site'", "'('", "')'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
-		null, null, null, "IDENT", "CADEIA", "NUM_INT", "NUM_REAL", "COMENTARIO", 
+		null, null, null, null, "IDENT", "CADEIA", "NUM_INT", "NUM_REAL", "COMENTARIO", 
 		"COMENTARIOERRO", "WS", "ERROR"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
@@ -99,16 +99,16 @@ public class T3Lexer extends Lexer {
 	@Override
 	public void action(RuleContext _localctx, int ruleIndex, int actionIndex) {
 		switch (ruleIndex) {
-		case 6:
+		case 7:
 			COMENTARIO_action((RuleContext)_localctx, actionIndex);
 			break;
-		case 7:
+		case 8:
 			COMENTARIOERRO_action((RuleContext)_localctx, actionIndex);
 			break;
-		case 8:
+		case 9:
 			WS_action((RuleContext)_localctx, actionIndex);
 			break;
-		case 9:
+		case 10:
 			ERROR_action((RuleContext)_localctx, actionIndex);
 			break;
 		}
@@ -124,6 +124,7 @@ public class T3Lexer extends Lexer {
 		switch (actionIndex) {
 		case 1:
 			throw new ParseCancellationException("Linha "+getLine()+": comentario nao fechado");
+//			break;
 		}
 	}
 	private void WS_action(RuleContext _localctx, int actionIndex) {
@@ -137,38 +138,36 @@ public class T3Lexer extends Lexer {
 		switch (actionIndex) {
 		case 3:
 			 throw new ParseCancellationException("Linha " + getLine() + ": "+ getText() +" - simbolo nao identificado"); 
+//			break;
 		}
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\2\fi\b\1\4\2\t\2\4"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\2\r\\\b\1\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
-		"\13\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3"+
-		"\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\4\3\4\7\4\62\n\4\f\4\16\4\65\13\4\3\5"+
-		"\3\5\7\59\n\5\f\5\16\5<\13\5\3\5\3\5\3\6\6\6A\n\6\r\6\16\6B\3\7\6\7F\n"+
-		"\7\r\7\16\7G\3\7\3\7\6\7L\n\7\r\7\16\7M\3\b\3\b\7\bR\n\b\f\b\16\bU\13"+
-		"\b\3\b\3\b\3\b\3\t\3\t\7\t\\\n\t\f\t\16\t_\13\t\3\t\3\t\3\t\3\n\3\n\3"+
-		"\n\3\13\3\13\3\13\2\2\f\3\3\5\4\7\5\t\6\13\7\r\b\17\t\21\n\23\13\25\f"+
-		"\3\2\b\5\2C\\aac|\6\2\62;C\\aac|\5\2\f\f\17\17$$\5\2\f\f\17\17\177\177"+
-		"\4\2\f\f\177\177\5\2\13\f\17\17\"\"\2o\2\3\3\2\2\2\2\5\3\2\2\2\2\7\3\2"+
-		"\2\2\2\t\3\2\2\2\2\13\3\2\2\2\2\r\3\2\2\2\2\17\3\2\2\2\2\21\3\2\2\2\2"+
-		"\23\3\2\2\2\2\25\3\2\2\2\3\27\3\2\2\2\5!\3\2\2\2\7/\3\2\2\2\t\66\3\2\2"+
-		"\2\13@\3\2\2\2\rE\3\2\2\2\17O\3\2\2\2\21Y\3\2\2\2\23c\3\2\2\2\25f\3\2"+
-		"\2\2\27\30\7c\2\2\30\31\7n\2\2\31\32\7i\2\2\32\33\7q\2\2\33\34\7t\2\2"+
-		"\34\35\7k\2\2\35\36\7v\2\2\36\37\7o\2\2\37 \7q\2\2 \4\3\2\2\2!\"\7h\2"+
-		"\2\"#\7k\2\2#$\7o\2\2$%\7a\2\2%&\7c\2\2&\'\7n\2\2\'(\7i\2\2()\7q\2\2)"+
-		"*\7t\2\2*+\7k\2\2+,\7v\2\2,-\7o\2\2-.\7q\2\2.\6\3\2\2\2/\63\t\2\2\2\60"+
-		"\62\t\3\2\2\61\60\3\2\2\2\62\65\3\2\2\2\63\61\3\2\2\2\63\64\3\2\2\2\64"+
-		"\b\3\2\2\2\65\63\3\2\2\2\66:\7$\2\2\679\n\4\2\28\67\3\2\2\29<\3\2\2\2"+
-		":8\3\2\2\2:;\3\2\2\2;=\3\2\2\2<:\3\2\2\2=>\7$\2\2>\n\3\2\2\2?A\4\62;\2"+
-		"@?\3\2\2\2AB\3\2\2\2B@\3\2\2\2BC\3\2\2\2C\f\3\2\2\2DF\4\62;\2ED\3\2\2"+
-		"\2FG\3\2\2\2GE\3\2\2\2GH\3\2\2\2HI\3\2\2\2IK\7\60\2\2JL\4\62;\2KJ\3\2"+
-		"\2\2LM\3\2\2\2MK\3\2\2\2MN\3\2\2\2N\16\3\2\2\2OS\7}\2\2PR\n\5\2\2QP\3"+
-		"\2\2\2RU\3\2\2\2SQ\3\2\2\2ST\3\2\2\2TV\3\2\2\2US\3\2\2\2VW\7\177\2\2W"+
-		"X\b\b\2\2X\20\3\2\2\2Y]\7}\2\2Z\\\n\6\2\2[Z\3\2\2\2\\_\3\2\2\2][\3\2\2"+
-		"\2]^\3\2\2\2^`\3\2\2\2_]\3\2\2\2`a\7\f\2\2ab\b\t\3\2b\22\3\2\2\2cd\t\7"+
-		"\2\2de\b\n\4\2e\24\3\2\2\2fg\13\2\2\2gh\b\13\5\2h\26\3\2\2\2\n\2\63:B"+
-		"GMS]\6\3\b\2\3\t\3\3\n\4\3\13\5";
+		"\13\4\f\t\f\3\2\3\2\3\2\3\2\3\2\3\3\3\3\3\4\3\4\3\5\3\5\7\5%\n\5\f\5\16"+
+		"\5(\13\5\3\6\3\6\7\6,\n\6\f\6\16\6/\13\6\3\6\3\6\3\7\6\7\64\n\7\r\7\16"+
+		"\7\65\3\b\6\b9\n\b\r\b\16\b:\3\b\3\b\6\b?\n\b\r\b\16\b@\3\t\3\t\7\tE\n"+
+		"\t\f\t\16\tH\13\t\3\t\3\t\3\t\3\n\3\n\7\nO\n\n\f\n\16\nR\13\n\3\n\3\n"+
+		"\3\n\3\13\3\13\3\13\3\f\3\f\3\f\2\2\r\3\3\5\4\7\5\t\6\13\7\r\b\17\t\21"+
+		"\n\23\13\25\f\27\r\3\2\b\5\2C\\aac|\6\2\62;C\\aac|\5\2\f\f\17\17$$\5\2"+
+		"\f\f\17\17\177\177\4\2\f\f\177\177\5\2\13\f\17\17\"\"\2b\2\3\3\2\2\2\2"+
+		"\5\3\2\2\2\2\7\3\2\2\2\2\t\3\2\2\2\2\13\3\2\2\2\2\r\3\2\2\2\2\17\3\2\2"+
+		"\2\2\21\3\2\2\2\2\23\3\2\2\2\2\25\3\2\2\2\2\27\3\2\2\2\3\31\3\2\2\2\5"+
+		"\36\3\2\2\2\7 \3\2\2\2\t\"\3\2\2\2\13)\3\2\2\2\r\63\3\2\2\2\178\3\2\2"+
+		"\2\21B\3\2\2\2\23L\3\2\2\2\25V\3\2\2\2\27Y\3\2\2\2\31\32\7u\2\2\32\33"+
+		"\7k\2\2\33\34\7v\2\2\34\35\7g\2\2\35\4\3\2\2\2\36\37\7*\2\2\37\6\3\2\2"+
+		"\2 !\7+\2\2!\b\3\2\2\2\"&\t\2\2\2#%\t\3\2\2$#\3\2\2\2%(\3\2\2\2&$\3\2"+
+		"\2\2&\'\3\2\2\2\'\n\3\2\2\2(&\3\2\2\2)-\7$\2\2*,\n\4\2\2+*\3\2\2\2,/\3"+
+		"\2\2\2-+\3\2\2\2-.\3\2\2\2.\60\3\2\2\2/-\3\2\2\2\60\61\7$\2\2\61\f\3\2"+
+		"\2\2\62\64\4\62;\2\63\62\3\2\2\2\64\65\3\2\2\2\65\63\3\2\2\2\65\66\3\2"+
+		"\2\2\66\16\3\2\2\2\679\4\62;\28\67\3\2\2\29:\3\2\2\2:8\3\2\2\2:;\3\2\2"+
+		"\2;<\3\2\2\2<>\7\60\2\2=?\4\62;\2>=\3\2\2\2?@\3\2\2\2@>\3\2\2\2@A\3\2"+
+		"\2\2A\20\3\2\2\2BF\7}\2\2CE\n\5\2\2DC\3\2\2\2EH\3\2\2\2FD\3\2\2\2FG\3"+
+		"\2\2\2GI\3\2\2\2HF\3\2\2\2IJ\7\177\2\2JK\b\t\2\2K\22\3\2\2\2LP\7}\2\2"+
+		"MO\n\6\2\2NM\3\2\2\2OR\3\2\2\2PN\3\2\2\2PQ\3\2\2\2QS\3\2\2\2RP\3\2\2\2"+
+		"ST\7\f\2\2TU\b\n\3\2U\24\3\2\2\2VW\t\7\2\2WX\b\13\4\2X\26\3\2\2\2YZ\13"+
+		"\2\2\2Z[\b\f\5\2[\30\3\2\2\2\n\2&-\65:@FP\6\3\t\2\3\n\3\3\13\4\3\f\5";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
