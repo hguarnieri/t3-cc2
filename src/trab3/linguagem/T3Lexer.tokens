@@ -1,0 +1,12 @@
+T__0=1
+T__1=2
+IDENT=3
+CADEIA=4
+NUM_INT=5
+NUM_REAL=6
+COMENTARIO=7
+COMENTARIOERRO=8
+WS=9
+ERROR=10
+'algoritmo'=1
+'fim_algoritmo'=2
