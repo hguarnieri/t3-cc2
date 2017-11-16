@@ -30,8 +30,14 @@ WS
     : (' ' | '\t' | '\r' | '\n') {skip();}
     ;
 
-programa
-    : 'algoritmo' 'fim_algoritmo'
-    ;
+site:
+	'site' ('(' parametros ')')? '{' menu? sidebar? banner? conteudo rodape? '}' EOF;
+
+titulo_site:
+    'titulo' '=' CADEIA;
+
+titulo:
+	'titulo' ('(' parametros ')')? '(' CADEIA ')';
+
 
 ERROR: . { throw new ParseCancellationException("Linha " + getLine() + ": "+ getText() +" - simbolo nao identificado"); };
