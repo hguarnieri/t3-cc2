@@ -1,6 +1,10 @@
-site(cv,"Curriculum Vitae")
-infopessoal("Henrique Guarnieri", "13/12/1990", "Pensao Dona Ilda", "henrique@gmail.com")
-box(educacao,"01/03/2012","31/12/2018", "Universidade Federal de Sao Carlos", "BCC")
-box(experiencia,"01/03/2017","31/12/2017", "QuintoAndar", "Estagiario")
-box(infoadicional,"Voluntario Campus Party", "Auxiliar de Palco na area de Desenvolvimento")
-
+site(tipo=cv,
+    titulo="Curriculo Vittae",
+    autor=(nome="Henrique Guarnieri",
+    contato="henrique@grupo11.com",
+    descricao="Aluno de Ciencia da Computacao da turma de 2012"))
+experiencia(periodo=01/03/2012,31/12/2017, organizacao="UFSCar", atividade="Ciencia da Computação")
+experiencia(periodo=01/03/2015,31/12/2015, organizacao="University of Adelaide", atividade="Computer Science")
+experiencia(periodo=01/08/2015,29/02/2016, organizacao="University of Adelaide", atividade="Programmer")
+infoAdicional(titulo="Voluntário na Campus Party", descricao="Auxilio no trabalho de palco de desenvolvimento")
+infoAdicional(titulo="Hackathon FIESP", descricao="Desenvolvimento de um aplicativo para controle de Vacinas")

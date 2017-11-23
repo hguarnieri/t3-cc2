@@ -32,10 +32,11 @@ site
     : 'site' '(' parametros ')' estruturas;
 
 parametros
-    : 'tipo=' tiposite ',' 'titulo=' titulo ',' 'autor=' autor;
+    : 'tipo=' tiposite ',' 'titulo=' titulo ',' 'autor=' autor
+    ;
 
 autor
-    : '(' 'nome=' nome ',' 'contato=' contato (',' 'descricao=' descricao)?
+    : '(' 'nome=' nome ',' 'contato=' contato ',' 'descricao=' descricao ')'
     ;
 
 tiposite
@@ -51,7 +52,7 @@ nome
     : CADEIA;
 
 contato
-    : '(' EMAIL | CADEIA ')';
+    : EMAIL | CADEIA;
 
 estruturas
     : estruturablog | estruturasite | estruturacv;
