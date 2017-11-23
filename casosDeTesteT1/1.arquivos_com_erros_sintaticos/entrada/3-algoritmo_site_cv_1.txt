@@ -1,0 +1,6 @@
+site(cv,"Curriculum Vitae")
+infopessoal("Henrique Guarnieri", "13/12/1990", "Pensao Dona Ilda", "henrique@gmail.com")
+box(educacao,"01/03/2012","31/12/2018", "Universidade Federal de Sao Carlos", "BCC")
+box(experiencia,"01/03/2017","31/12/2017", "QuintoAndar", "Estagiario")
+box(infoadicional,"Voluntario Campus Party", "Auxiliar de Palco na area de Desenvolvimento")
+

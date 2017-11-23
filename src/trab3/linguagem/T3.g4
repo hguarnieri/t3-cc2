@@ -1,19 +1,11 @@
 grammar T3;
 
-IDENT
-    : ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '0'..'9' | '_')*
-    ;
-
 CADEIA
     : '"' ~('\n' | '\r' | '"')* '"'
     ;
 
 NUM_INT
     : ('0'..'9')+
-    ;
-
-NUM_REAL
-    : ('0'..'9')+ '.' ('0'..'9')+
     ;
 
 COMENTARIO
@@ -30,49 +22,58 @@ WS
     : (' ' | '\t' | '\r' | '\n') {skip();}
     ;
 
+
 site:
-	'site' '(' parametros ')';
+	'site' '(' parametros ')' (estruturaSite | estruturaBlog | estruturaCV ); //adicionar palavras chaves para visualizacao de codigo
+
 
 parametros:
-    tiposite ',' titulo?;
+    tiposite (',' titulo)?;
 
 titulo:
     CADEIA;
 
 tiposite:
-//blog, cv, site
+        'blog' | 'cv' | 'site';
 
 descricao:
-    CADEIA;
+    'descricao' '(' CADEIA ')';
 
-info-pessoal:
-    '(' nome ',' data_nascimento ',' endereco ',' contato ')';
+infopessoal:
+    'infopessoal' '(' nome ',' data ',' endereco ',' contato ')' | // cv
+    'infopessoal' '(' nome ',' contato ',' perfil ')' ; // blog
+
+nome:   
+    CADEIA;
 
 contato:
     '(' email | telefone ')';
 
+perfil:
+    CADEIA;
+
 email: 
-    CADEIA '@' CADEIA '.com' | 'br'  ;
+    CADEIA '@' CADEIA '.com' '.br'?  ; //procurar uma regra lexica para email
 
 telefone:
         NUM_INT;
 
-box:
-    'box' '(' tiposite ',' tipobox ',' | //obrigatorio para todos //blog,site,cv   //post,edu,exp,outros
-              titulo ',' conteudo ',' data | //blog
-              periodo ',' local ',' curso | //cv- educacao
-              periodo ',' local ',' curso | //cv- experiencias
-              titulo ',' conteudo | //site
-              itens* ')'; //cv-itens
-          
-itens:
-    CADEIA ;
+endereco:
+    CADEIA; 
+
+box:							//resolver problema de amgiguidade criado uma unica regra box e tratar o resutado 								//semanticamente
+
+    'box' '(' tiposite ',' titulo ',' conteudo ',' data ')' | //blog
+    'box' '(' tipobox ',' data ',' data ',' local ',' curso ')' | //cv- educacao
+    'box' '(' tipobox ','  data ',' data ',' local ',' funcao ')' | //cv- experiencia
+    'box' '(' tipobox ',' titulo ',' descricao ')' |  //cv-itens
+    'box' '(' titulo ',' conteudo ')' ; //site
 
 tipobox:
-//post,educacao,experiencias,outras_infos,site-content
+    'post' | 'educacao' | 'experiencia' | 'infoadicional' | 'conteudo' ;
 
 data:   
-    '"' NUM_INT ',' NUM_INT ',' NUM_INT '"';
+    '"' NUM_INT '/' NUM_INT '/' NUM_INT '"';
 
 conteudo:
     CADEIA;
@@ -83,10 +84,12 @@ local:
 curso:
     CADEIA;
 
-periodo:
-    'Inicio:' data ',' 'Termino:' data ;
+funcao:
+    CADEIA;
 
 
+aviso:
+    CADEIA;
 
 
     

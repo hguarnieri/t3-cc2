@@ -1,16 +1,4 @@
-{ leitura de nome e idade com escrita de mensagem usando estes dados }
-
-
-	declare
-		nome: literal
-	declare
-		idade: inteiro
-
-	{ leitura de nome e idade do teclado }
-	leia(nome)
-	leia(idade)
-
-	{ saída da mensagem na tela }
-	escreva(nome, " tem ", idade, " anos.")
-
-fim_algoritmo
+site(site,"Dona Ilda Eco's Resort")
+descricao("Este eh o site oficial da melhor pensao estudantil de Sao Carlos e Regiao")
+box("Almoco","Almoco e Janta feitos no fogao a lenha por uma cozinha profissional de segunda a sexta")
+box("Acomodacoes","Quartos individual em diversos tamanhos")
