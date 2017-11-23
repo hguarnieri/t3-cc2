@@ -6576,6 +6576,11 @@ button.close {
 .visible-lg-inline-block {
   display: none !important;
 }
+.jumbo_main {
+  background-color:#e6e6e6;
+  padding-top:20px;
+  padding-bottom:20px;
+}
 .post_row {
    height:400px;
    margin-bottom:20px;
