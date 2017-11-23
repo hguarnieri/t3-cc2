@@ -1,3 +1,3 @@
-site(tipo=blog,titulo="Dragon Ball Super Fans",autor=(nome="Migate no Gokui",contato=(dragonballsuperfans@gmail.com),descricao="O melhor blog de Dragon Ball Super que ira deixar voce sempre por dentro do que esta acontecendo na serie ")
-post(titulo="Episodio 116 - SSB defeated?",data="23/11/2017",conteudo="Neste episodio, Kefura forca Goku a quebrar seus limites")
-post(titulo="Episodio 117 - Goku - limite breaker!",data="30/11/2017",conteudo="Goku vence o torneio e todo mundo morre!")
+site(tipo=blog,titulo="Dragon Ball Super Fans",autor=(nome="Migate no Gokui",contato="dragonballsuperfans@gmail.com",descricao="O melhor blog de Dragon Ball Super que ira deixar voce sempre por dentro do que esta acontecendo na serie "))
+post(titulo="Episodio 116 - SSB defeated?",data=23/11/2017,conteudo="Neste episodio, Kefura forca Goku a quebrar seus limites")
+post(titulo="Episodio 117 - Goku - limite breaker!",data=30/11/2017,conteudo="Goku vence o torneio e todo mundo morre!")
