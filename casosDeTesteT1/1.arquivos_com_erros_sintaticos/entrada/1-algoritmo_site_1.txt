@@ -1,4 +1,9 @@
-site(site,"Dona Ilda Eco's Resort")
-descricao("Este eh o site oficial da melhor pensao estudantil de Sao Carlos e Regiao")
-box("Almoco","Almoco e Janta feitos no fogao a lenha por uma cozinha profissional de segunda a sexta")
-box("Acomodacoes","Quartos individual em diversos tamanhos")
+site(tipo=site,
+    titulo="Dona Ilda Eco's Resort",
+    autor=(nome="Henrique Guarnieri",
+    contato="henrique@grupo11.com"))
+
+item(titulo="Almoco",
+     descricao="Almoco e Janta feitos no fogao a lenha por uma cozinha profissional de segunda a sexta")
+item(titulo="Acomodacoes",
+     descricao="Quartos individual em diversos tamanhos")

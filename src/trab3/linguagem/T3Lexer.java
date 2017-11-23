@@ -132,7 +132,7 @@ public class T3Lexer extends Lexer {
 		switch (actionIndex) {
 		case 1:
 			throw new ParseCancellationException("Linha "+getLine()+": comentario nao fechado");
-			break;
+//			break;
 		}
 	}
 	private void WS_action(RuleContext _localctx, int actionIndex) {
@@ -146,7 +146,7 @@ public class T3Lexer extends Lexer {
 		switch (actionIndex) {
 		case 3:
 			 throw new ParseCancellationException("Linha " + getLine() + ": "+ getText() +" - simbolo nao identificado"); 
-			break;
+//			break;
 		}
 	}
 

@@ -244,7 +244,6 @@ public class T3Parser extends Parser {
 	public final AutorContext autor() throws RecognitionException {
 		AutorContext _localctx = new AutorContext(_ctx, getState());
 		enterRule(_localctx, 4, RULE_autor);
-		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -260,20 +259,14 @@ public class T3Parser extends Parser {
 			match(T__8);
 			setState(56);
 			contato();
+			setState(57);
+			match(T__4);
+			setState(58);
+			match(T__9);
+			setState(59);
+			descricao();
 			setState(60);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			if (_la==T__4) {
-				{
-				setState(57);
-				match(T__4);
-				setState(58);
-				match(T__9);
-				setState(59);
-				descricao();
-				}
-			}
-
+			match(T__2);
 			}
 		}
 		catch (RecognitionException re) {
@@ -488,30 +481,20 @@ public class T3Parser extends Parser {
 	public final ContatoContext contato() throws RecognitionException {
 		ContatoContext _localctx = new ContatoContext(_ctx, getState());
 		enterRule(_localctx, 14, RULE_contato);
+		int _la;
 		try {
-			setState(74);
-			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case T__1:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(70);
-				match(T__1);
-				setState(71);
-				match(EMAIL);
-				}
-				break;
-			case CADEIA:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(72);
-				match(CADEIA);
-				setState(73);
-				match(T__2);
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(70);
+			_la = _input.LA(1);
+			if ( !(_la==CADEIA || _la==EMAIL) ) {
+			_errHandler.recoverInline(this);
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -558,27 +541,27 @@ public class T3Parser extends Parser {
 		EstruturasContext _localctx = new EstruturasContext(_ctx, getState());
 		enterRule(_localctx, 16, RULE_estruturas);
 		try {
-			setState(79);
+			setState(75);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,0,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(76);
+				setState(72);
 				estruturablog();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(77);
+				setState(73);
 				estruturasite();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(78);
+				setState(74);
 				estruturacv();
 				}
 				break;
@@ -628,17 +611,17 @@ public class T3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(84);
+			setState(80);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==T__12) {
 				{
 				{
-				setState(81);
+				setState(77);
 				post();
 				}
 				}
-				setState(86);
+				setState(82);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -686,27 +669,27 @@ public class T3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(87);
+			setState(83);
 			match(T__12);
-			setState(88);
+			setState(84);
 			match(T__1);
-			setState(89);
+			setState(85);
 			match(T__5);
-			setState(90);
+			setState(86);
 			match(CADEIA);
-			setState(91);
+			setState(87);
 			match(T__4);
-			setState(92);
+			setState(88);
 			match(T__13);
-			setState(93);
+			setState(89);
 			match(DATA);
-			setState(94);
+			setState(90);
 			match(T__4);
-			setState(95);
+			setState(91);
 			match(T__14);
-			setState(96);
+			setState(92);
 			match(CADEIA);
-			setState(97);
+			setState(93);
 			match(T__2);
 			}
 		}
@@ -754,17 +737,17 @@ public class T3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(102);
+			setState(98);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==T__15) {
 				{
 				{
-				setState(99);
+				setState(95);
 				item();
 				}
 				}
-				setState(104);
+				setState(100);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -811,21 +794,21 @@ public class T3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(105);
+			setState(101);
 			match(T__15);
-			setState(106);
+			setState(102);
 			match(T__1);
-			setState(107);
+			setState(103);
 			match(T__5);
-			setState(108);
+			setState(104);
 			match(CADEIA);
-			setState(109);
+			setState(105);
 			match(T__4);
-			setState(110);
+			setState(106);
 			match(T__9);
-			setState(111);
+			setState(107);
 			match(CADEIA);
-			setState(112);
+			setState(108);
 			match(T__2);
 			}
 		}
@@ -873,17 +856,17 @@ public class T3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(115); 
+			setState(111); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(114);
+				setState(110);
 				secoes();
 				}
 				}
-				setState(117); 
+				setState(113); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( _la==T__16 || _la==T__20 );
@@ -930,20 +913,20 @@ public class T3Parser extends Parser {
 		SecoesContext _localctx = new SecoesContext(_ctx, getState());
 		enterRule(_localctx, 28, RULE_secoes);
 		try {
-			setState(121);
+			setState(117);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__16:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(119);
+				setState(115);
 				secaoExperiencia();
 				}
 				break;
 			case T__20:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(120);
+				setState(116);
 				secaoInfoAdicional();
 				}
 				break;
@@ -995,27 +978,27 @@ public class T3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(123);
+			setState(119);
 			match(T__16);
-			setState(124);
+			setState(120);
 			match(T__1);
-			setState(125);
+			setState(121);
 			match(T__17);
-			setState(126);
+			setState(122);
 			periodo();
-			setState(127);
+			setState(123);
 			match(T__4);
-			setState(128);
+			setState(124);
 			match(T__18);
-			setState(129);
+			setState(125);
 			match(CADEIA);
-			setState(130);
+			setState(126);
 			match(T__4);
-			setState(131);
+			setState(127);
 			match(T__19);
-			setState(132);
+			setState(128);
 			match(CADEIA);
-			setState(133);
+			setState(129);
 			match(T__2);
 			}
 		}
@@ -1060,11 +1043,11 @@ public class T3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(135);
+			setState(131);
 			match(DATA);
-			setState(136);
+			setState(132);
 			match(T__4);
-			setState(137);
+			setState(133);
 			match(DATA);
 			}
 		}
@@ -1109,21 +1092,21 @@ public class T3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(139);
+			setState(135);
 			match(T__20);
-			setState(140);
+			setState(136);
 			match(T__1);
-			setState(141);
+			setState(137);
 			match(T__5);
-			setState(142);
+			setState(138);
 			match(CADEIA);
-			setState(143);
+			setState(139);
 			match(T__4);
-			setState(144);
+			setState(140);
 			match(T__9);
-			setState(145);
+			setState(141);
 			match(CADEIA);
-			setState(146);
+			setState(142);
 			match(T__2);
 			}
 		}
@@ -1139,43 +1122,41 @@ public class T3Parser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\37\u0097\4\2\t\2"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\37\u0093\4\2\t\2"+
 		"\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
 		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\3\2\3\2\3\2\3\2\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3"+
-		"\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4?\n\4\3\5\3\5\3\6\3\6\3\7\3\7"+
-		"\3\b\3\b\3\t\3\t\3\t\3\t\5\tM\n\t\3\n\3\n\3\n\5\nR\n\n\3\13\7\13U\n\13"+
-		"\f\13\16\13X\13\13\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\r"+
-		"\7\rg\n\r\f\r\16\rj\13\r\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16"+
-		"\3\17\6\17v\n\17\r\17\16\17w\3\20\3\20\5\20|\n\20\3\21\3\21\3\21\3\21"+
-		"\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\22\3\22\3\22\3\22\3\23\3\23"+
-		"\3\23\3\23\3\23\3\23\3\23\3\23\3\23\3\23\2\2\24\2\4\6\b\n\f\16\20\22\24"+
-		"\26\30\32\34\36 \"$\2\3\4\2\3\3\r\16\2\u008c\2&\3\2\2\2\4,\3\2\2\2\6\65"+
-		"\3\2\2\2\b@\3\2\2\2\nB\3\2\2\2\fD\3\2\2\2\16F\3\2\2\2\20L\3\2\2\2\22Q"+
-		"\3\2\2\2\24V\3\2\2\2\26Y\3\2\2\2\30h\3\2\2\2\32k\3\2\2\2\34u\3\2\2\2\36"+
-		"{\3\2\2\2 }\3\2\2\2\"\u0089\3\2\2\2$\u008d\3\2\2\2&\'\7\3\2\2\'(\7\4\2"+
+		"\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\5\3\5\3\6\3\6\3\7\3\7\3"+
+		"\b\3\b\3\t\3\t\3\n\3\n\3\n\5\nN\n\n\3\13\7\13Q\n\13\f\13\16\13T\13\13"+
+		"\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\r\7\rc\n\r\f\r\16\r"+
+		"f\13\r\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\17\6\17r\n\17\r"+
+		"\17\16\17s\3\20\3\20\5\20x\n\20\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21"+
+		"\3\21\3\21\3\21\3\21\3\22\3\22\3\22\3\22\3\23\3\23\3\23\3\23\3\23\3\23"+
+		"\3\23\3\23\3\23\3\23\2\2\24\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \""+
+		"$\2\4\4\2\3\3\r\16\4\2\30\30\34\34\2\u0086\2&\3\2\2\2\4,\3\2\2\2\6\65"+
+		"\3\2\2\2\b@\3\2\2\2\nB\3\2\2\2\fD\3\2\2\2\16F\3\2\2\2\20H\3\2\2\2\22M"+
+		"\3\2\2\2\24R\3\2\2\2\26U\3\2\2\2\30d\3\2\2\2\32g\3\2\2\2\34q\3\2\2\2\36"+
+		"w\3\2\2\2 y\3\2\2\2\"\u0085\3\2\2\2$\u0089\3\2\2\2&\'\7\3\2\2\'(\7\4\2"+
 		"\2()\5\4\3\2)*\7\5\2\2*+\5\22\n\2+\3\3\2\2\2,-\7\6\2\2-.\5\b\5\2./\7\7"+
 		"\2\2/\60\7\b\2\2\60\61\5\n\6\2\61\62\7\7\2\2\62\63\7\t\2\2\63\64\5\6\4"+
 		"\2\64\5\3\2\2\2\65\66\7\4\2\2\66\67\7\n\2\2\678\5\16\b\289\7\7\2\29:\7"+
-		"\13\2\2:>\5\20\t\2;<\7\7\2\2<=\7\f\2\2=?\5\f\7\2>;\3\2\2\2>?\3\2\2\2?"+
-		"\7\3\2\2\2@A\t\2\2\2A\t\3\2\2\2BC\7\30\2\2C\13\3\2\2\2DE\7\30\2\2E\r\3"+
-		"\2\2\2FG\7\30\2\2G\17\3\2\2\2HI\7\4\2\2IM\7\34\2\2JK\7\30\2\2KM\7\5\2"+
-		"\2LH\3\2\2\2LJ\3\2\2\2M\21\3\2\2\2NR\5\24\13\2OR\5\30\r\2PR\5\34\17\2"+
-		"QN\3\2\2\2QO\3\2\2\2QP\3\2\2\2R\23\3\2\2\2SU\5\26\f\2TS\3\2\2\2UX\3\2"+
-		"\2\2VT\3\2\2\2VW\3\2\2\2W\25\3\2\2\2XV\3\2\2\2YZ\7\17\2\2Z[\7\4\2\2[\\"+
-		"\7\b\2\2\\]\7\30\2\2]^\7\7\2\2^_\7\20\2\2_`\7\35\2\2`a\7\7\2\2ab\7\21"+
-		"\2\2bc\7\30\2\2cd\7\5\2\2d\27\3\2\2\2eg\5\32\16\2fe\3\2\2\2gj\3\2\2\2"+
-		"hf\3\2\2\2hi\3\2\2\2i\31\3\2\2\2jh\3\2\2\2kl\7\22\2\2lm\7\4\2\2mn\7\b"+
-		"\2\2no\7\30\2\2op\7\7\2\2pq\7\f\2\2qr\7\30\2\2rs\7\5\2\2s\33\3\2\2\2t"+
-		"v\5\36\20\2ut\3\2\2\2vw\3\2\2\2wu\3\2\2\2wx\3\2\2\2x\35\3\2\2\2y|\5 \21"+
-		"\2z|\5$\23\2{y\3\2\2\2{z\3\2\2\2|\37\3\2\2\2}~\7\23\2\2~\177\7\4\2\2\177"+
-		"\u0080\7\24\2\2\u0080\u0081\5\"\22\2\u0081\u0082\7\7\2\2\u0082\u0083\7"+
-		"\25\2\2\u0083\u0084\7\30\2\2\u0084\u0085\7\7\2\2\u0085\u0086\7\26\2\2"+
-		"\u0086\u0087\7\30\2\2\u0087\u0088\7\5\2\2\u0088!\3\2\2\2\u0089\u008a\7"+
-		"\35\2\2\u008a\u008b\7\7\2\2\u008b\u008c\7\35\2\2\u008c#\3\2\2\2\u008d"+
-		"\u008e\7\27\2\2\u008e\u008f\7\4\2\2\u008f\u0090\7\b\2\2\u0090\u0091\7"+
-		"\30\2\2\u0091\u0092\7\7\2\2\u0092\u0093\7\f\2\2\u0093\u0094\7\30\2\2\u0094"+
-		"\u0095\7\5\2\2\u0095%\3\2\2\2\t>LQVhw{";
+		"\13\2\2:;\5\20\t\2;<\7\7\2\2<=\7\f\2\2=>\5\f\7\2>?\7\5\2\2?\7\3\2\2\2"+
+		"@A\t\2\2\2A\t\3\2\2\2BC\7\30\2\2C\13\3\2\2\2DE\7\30\2\2E\r\3\2\2\2FG\7"+
+		"\30\2\2G\17\3\2\2\2HI\t\3\2\2I\21\3\2\2\2JN\5\24\13\2KN\5\30\r\2LN\5\34"+
+		"\17\2MJ\3\2\2\2MK\3\2\2\2ML\3\2\2\2N\23\3\2\2\2OQ\5\26\f\2PO\3\2\2\2Q"+
+		"T\3\2\2\2RP\3\2\2\2RS\3\2\2\2S\25\3\2\2\2TR\3\2\2\2UV\7\17\2\2VW\7\4\2"+
+		"\2WX\7\b\2\2XY\7\30\2\2YZ\7\7\2\2Z[\7\20\2\2[\\\7\35\2\2\\]\7\7\2\2]^"+
+		"\7\21\2\2^_\7\30\2\2_`\7\5\2\2`\27\3\2\2\2ac\5\32\16\2ba\3\2\2\2cf\3\2"+
+		"\2\2db\3\2\2\2de\3\2\2\2e\31\3\2\2\2fd\3\2\2\2gh\7\22\2\2hi\7\4\2\2ij"+
+		"\7\b\2\2jk\7\30\2\2kl\7\7\2\2lm\7\f\2\2mn\7\30\2\2no\7\5\2\2o\33\3\2\2"+
+		"\2pr\5\36\20\2qp\3\2\2\2rs\3\2\2\2sq\3\2\2\2st\3\2\2\2t\35\3\2\2\2ux\5"+
+		" \21\2vx\5$\23\2wu\3\2\2\2wv\3\2\2\2x\37\3\2\2\2yz\7\23\2\2z{\7\4\2\2"+
+		"{|\7\24\2\2|}\5\"\22\2}~\7\7\2\2~\177\7\25\2\2\177\u0080\7\30\2\2\u0080"+
+		"\u0081\7\7\2\2\u0081\u0082\7\26\2\2\u0082\u0083\7\30\2\2\u0083\u0084\7"+
+		"\5\2\2\u0084!\3\2\2\2\u0085\u0086\7\35\2\2\u0086\u0087\7\7\2\2\u0087\u0088"+
+		"\7\35\2\2\u0088#\3\2\2\2\u0089\u008a\7\27\2\2\u008a\u008b\7\4\2\2\u008b"+
+		"\u008c\7\b\2\2\u008c\u008d\7\30\2\2\u008d\u008e\7\7\2\2\u008e\u008f\7"+
+		"\f\2\2\u008f\u0090\7\30\2\2\u0090\u0091\7\5\2\2\u0091%\3\2\2\2\7MRdsw";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
