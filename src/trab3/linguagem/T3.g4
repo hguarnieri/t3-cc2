@@ -16,6 +16,9 @@ COMENTARIO
 COMENTARIOERRO
     :   '{' (~('}'|'\n'))* '\n' {throw new ParseCancellationException("Linha "+getLine()+": comentario nao fechado");}
     ;
+
+EMAIL
+    :   ~('\n' | '\r' | '"')* '@' ~('\n' | '\r' | '"')* '.com' '.br'?
  
 
 WS
@@ -53,7 +56,7 @@ perfil:
     CADEIA;
 
 email: 
-    CADEIA '@' CADEIA '.com' '.br'?  ; //procurar uma regra lexica para email
+    EMAIL ;
 
 telefone:
         NUM_INT;
@@ -61,13 +64,12 @@ telefone:
 endereco:
     CADEIA; 
 
-box:							//resolver problema de amgiguidade criado uma unica regra box e tratar o resutado 								//semanticamente
+box:													//semanticamente
 
-    'box' '(' tiposite ',' titulo ',' conteudo ',' data ')' | //blog
-    'box' '(' tipobox ',' data ',' data ',' local ',' curso ')' | //cv- educacao
-    'box' '(' tipobox ','  data ',' data ',' local ',' funcao ')' | //cv- experiencia
-    'box' '(' tipobox ',' titulo ',' descricao ')' |  //cv-itens
-    'box' '(' titulo ',' conteudo ')' ; //site
+    'boxBlog' '(' tiposite ',' titulo ',' conteudo ',' data ')' | //blog
+    'boxCvAtividade' '(' tipobox ',' data ',' data ',' local ',' atividade ')' | //cv- educacao
+    'boxCvItens' '(' tipobox ',' titulo ',' descricao ')' |  //cv-itens
+    'boxSite' '(' titulo ',' conteudo ')' ; //site
 
 tipobox:
     'post' | 'educacao' | 'experiencia' | 'infoadicional' | 'conteudo' ;
