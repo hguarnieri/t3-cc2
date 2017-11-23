@@ -73,6 +73,7 @@ h2 {
 }
 h3 {
   page-break-after: avoid;
+  font-size: 180%;
   text-align: left;
   orphans: 3;
   widows: 3;
