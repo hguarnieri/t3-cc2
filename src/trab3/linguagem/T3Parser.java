@@ -17,20 +17,32 @@ public class T3Parser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, T__2=3, IDENT=4, CADEIA=5, NUM_INT=6, NUM_REAL=7, COMENTARIO=8, 
-		COMENTARIOERRO=9, WS=10, ERROR=11;
+		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
+		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, T__15=16, T__16=17, 
+		T__17=18, T__18=19, T__19=20, T__20=21, CADEIA=22, NUM_INT=23, COMENTARIO=24, 
+		COMENTARIOERRO=25, EMAIL=26, DATA=27, WS=28, ERROR=29;
 	public static final int
-		RULE_site = 0, RULE_parametros = 1, RULE_titulo = 2;
+		RULE_site = 0, RULE_parametros = 1, RULE_autor = 2, RULE_tiposite = 3, 
+		RULE_titulo = 4, RULE_descricao = 5, RULE_nome = 6, RULE_contato = 7, 
+		RULE_estruturas = 8, RULE_estruturablog = 9, RULE_post = 10, RULE_estruturasite = 11, 
+		RULE_item = 12, RULE_estruturacv = 13, RULE_secoes = 14, RULE_secaoExperiencia = 15, 
+		RULE_periodo = 16, RULE_secaoInfoAdicional = 17;
 	public static final String[] ruleNames = {
-		"site", "parametros", "titulo"
+		"site", "parametros", "autor", "tiposite", "titulo", "descricao", "nome", 
+		"contato", "estruturas", "estruturablog", "post", "estruturasite", "item", 
+		"estruturacv", "secoes", "secaoExperiencia", "periodo", "secaoInfoAdicional"
 	};
 
 	private static final String[] _LITERAL_NAMES = {
-		null, "'site'", "'('", "')'"
+		null, "'site'", "'('", "')'", "'tipo='", "','", "'titulo='", "'autor='", 
+		"'nome='", "'contato='", "'descricao='", "'blog'", "'cv'", "'post'", "'data='", 
+		"'conteudo='", "'item'", "'experiencia'", "'periodo='", "'organizacao='", 
+		"'atividade='", "'infoAdicional'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
-		null, null, null, null, "IDENT", "CADEIA", "NUM_INT", "NUM_REAL", "COMENTARIO", 
-		"COMENTARIOERRO", "WS", "ERROR"
+		null, null, null, null, null, null, null, null, null, null, null, null, 
+		null, null, null, null, null, null, null, null, null, null, "CADEIA", 
+		"NUM_INT", "COMENTARIO", "COMENTARIOERRO", "EMAIL", "DATA", "WS", "ERROR"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
@@ -85,6 +97,9 @@ public class T3Parser extends Parser {
 		public ParametrosContext parametros() {
 			return getRuleContext(ParametrosContext.class,0);
 		}
+		public EstruturasContext estruturas() {
+			return getRuleContext(EstruturasContext.class,0);
+		}
 		public SiteContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -110,14 +125,16 @@ public class T3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(6);
+			setState(36);
 			match(T__0);
-			setState(7);
+			setState(37);
 			match(T__1);
-			setState(8);
+			setState(38);
 			parametros();
-			setState(9);
+			setState(39);
 			match(T__2);
+			setState(40);
+			estruturas();
 			}
 		}
 		catch (RecognitionException re) {
@@ -132,8 +149,14 @@ public class T3Parser extends Parser {
 	}
 
 	public static class ParametrosContext extends ParserRuleContext {
+		public TipositeContext tiposite() {
+			return getRuleContext(TipositeContext.class,0);
+		}
 		public TituloContext titulo() {
 			return getRuleContext(TituloContext.class,0);
+		}
+		public AutorContext autor() {
+			return getRuleContext(AutorContext.class,0);
 		}
 		public ParametrosContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -157,20 +180,150 @@ public class T3Parser extends Parser {
 	public final ParametrosContext parametros() throws RecognitionException {
 		ParametrosContext _localctx = new ParametrosContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_parametros);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(42);
+			match(T__3);
+			setState(43);
+			tiposite();
+			setState(44);
+			match(T__4);
+			setState(45);
+			match(T__5);
+			setState(46);
+			titulo();
+			setState(47);
+			match(T__4);
+			setState(48);
+			match(T__6);
+			setState(49);
+			autor();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class AutorContext extends ParserRuleContext {
+		public NomeContext nome() {
+			return getRuleContext(NomeContext.class,0);
+		}
+		public ContatoContext contato() {
+			return getRuleContext(ContatoContext.class,0);
+		}
+		public DescricaoContext descricao() {
+			return getRuleContext(DescricaoContext.class,0);
+		}
+		public AutorContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_autor; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).enterAutor(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).exitAutor(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof T3Visitor ) return ((T3Visitor<? extends T>)visitor).visitAutor(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final AutorContext autor() throws RecognitionException {
+		AutorContext _localctx = new AutorContext(_ctx, getState());
+		enterRule(_localctx, 4, RULE_autor);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(12);
+			setState(51);
+			match(T__1);
+			setState(52);
+			match(T__7);
+			setState(53);
+			nome();
+			setState(54);
+			match(T__4);
+			setState(55);
+			match(T__8);
+			setState(56);
+			contato();
+			setState(60);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==CADEIA) {
+			if (_la==T__4) {
 				{
-				setState(11);
-				titulo();
+				setState(57);
+				match(T__4);
+				setState(58);
+				match(T__9);
+				setState(59);
+				descricao();
 				}
 			}
 
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class TipositeContext extends ParserRuleContext {
+		public TipositeContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_tiposite; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).enterTiposite(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).exitTiposite(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof T3Visitor ) return ((T3Visitor<? extends T>)visitor).visitTiposite(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final TipositeContext tiposite() throws RecognitionException {
+		TipositeContext _localctx = new TipositeContext(_ctx, getState());
+		enterRule(_localctx, 6, RULE_tiposite);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(62);
+			_la = _input.LA(1);
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__10) | (1L << T__11))) != 0)) ) {
+			_errHandler.recoverInline(this);
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -207,11 +360,11 @@ public class T3Parser extends Parser {
 
 	public final TituloContext titulo() throws RecognitionException {
 		TituloContext _localctx = new TituloContext(_ctx, getState());
-		enterRule(_localctx, 4, RULE_titulo);
+		enterRule(_localctx, 8, RULE_titulo);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(14);
+			setState(64);
 			match(CADEIA);
 			}
 		}
@@ -226,12 +379,803 @@ public class T3Parser extends Parser {
 		return _localctx;
 	}
 
+	public static class DescricaoContext extends ParserRuleContext {
+		public TerminalNode CADEIA() { return getToken(T3Parser.CADEIA, 0); }
+		public DescricaoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_descricao; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).enterDescricao(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).exitDescricao(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof T3Visitor ) return ((T3Visitor<? extends T>)visitor).visitDescricao(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final DescricaoContext descricao() throws RecognitionException {
+		DescricaoContext _localctx = new DescricaoContext(_ctx, getState());
+		enterRule(_localctx, 10, RULE_descricao);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(66);
+			match(CADEIA);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class NomeContext extends ParserRuleContext {
+		public TerminalNode CADEIA() { return getToken(T3Parser.CADEIA, 0); }
+		public NomeContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_nome; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).enterNome(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).exitNome(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof T3Visitor ) return ((T3Visitor<? extends T>)visitor).visitNome(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final NomeContext nome() throws RecognitionException {
+		NomeContext _localctx = new NomeContext(_ctx, getState());
+		enterRule(_localctx, 12, RULE_nome);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(68);
+			match(CADEIA);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ContatoContext extends ParserRuleContext {
+		public TerminalNode EMAIL() { return getToken(T3Parser.EMAIL, 0); }
+		public TerminalNode CADEIA() { return getToken(T3Parser.CADEIA, 0); }
+		public ContatoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_contato; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).enterContato(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).exitContato(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof T3Visitor ) return ((T3Visitor<? extends T>)visitor).visitContato(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ContatoContext contato() throws RecognitionException {
+		ContatoContext _localctx = new ContatoContext(_ctx, getState());
+		enterRule(_localctx, 14, RULE_contato);
+		try {
+			setState(74);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case T__1:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(70);
+				match(T__1);
+				setState(71);
+				match(EMAIL);
+				}
+				break;
+			case CADEIA:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(72);
+				match(CADEIA);
+				setState(73);
+				match(T__2);
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class EstruturasContext extends ParserRuleContext {
+		public EstruturablogContext estruturablog() {
+			return getRuleContext(EstruturablogContext.class,0);
+		}
+		public EstruturasiteContext estruturasite() {
+			return getRuleContext(EstruturasiteContext.class,0);
+		}
+		public EstruturacvContext estruturacv() {
+			return getRuleContext(EstruturacvContext.class,0);
+		}
+		public EstruturasContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_estruturas; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).enterEstruturas(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).exitEstruturas(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof T3Visitor ) return ((T3Visitor<? extends T>)visitor).visitEstruturas(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final EstruturasContext estruturas() throws RecognitionException {
+		EstruturasContext _localctx = new EstruturasContext(_ctx, getState());
+		enterRule(_localctx, 16, RULE_estruturas);
+		try {
+			setState(79);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(76);
+				estruturablog();
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(77);
+				estruturasite();
+				}
+				break;
+			case 3:
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(78);
+				estruturacv();
+				}
+				break;
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class EstruturablogContext extends ParserRuleContext {
+		public List<PostContext> post() {
+			return getRuleContexts(PostContext.class);
+		}
+		public PostContext post(int i) {
+			return getRuleContext(PostContext.class,i);
+		}
+		public EstruturablogContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_estruturablog; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).enterEstruturablog(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).exitEstruturablog(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof T3Visitor ) return ((T3Visitor<? extends T>)visitor).visitEstruturablog(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final EstruturablogContext estruturablog() throws RecognitionException {
+		EstruturablogContext _localctx = new EstruturablogContext(_ctx, getState());
+		enterRule(_localctx, 18, RULE_estruturablog);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(84);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while (_la==T__12) {
+				{
+				{
+				setState(81);
+				post();
+				}
+				}
+				setState(86);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class PostContext extends ParserRuleContext {
+		public List<TerminalNode> CADEIA() { return getTokens(T3Parser.CADEIA); }
+		public TerminalNode CADEIA(int i) {
+			return getToken(T3Parser.CADEIA, i);
+		}
+		public TerminalNode DATA() { return getToken(T3Parser.DATA, 0); }
+		public PostContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_post; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).enterPost(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).exitPost(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof T3Visitor ) return ((T3Visitor<? extends T>)visitor).visitPost(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final PostContext post() throws RecognitionException {
+		PostContext _localctx = new PostContext(_ctx, getState());
+		enterRule(_localctx, 20, RULE_post);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(87);
+			match(T__12);
+			setState(88);
+			match(T__1);
+			setState(89);
+			match(T__5);
+			setState(90);
+			match(CADEIA);
+			setState(91);
+			match(T__4);
+			setState(92);
+			match(T__13);
+			setState(93);
+			match(DATA);
+			setState(94);
+			match(T__4);
+			setState(95);
+			match(T__14);
+			setState(96);
+			match(CADEIA);
+			setState(97);
+			match(T__2);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class EstruturasiteContext extends ParserRuleContext {
+		public List<ItemContext> item() {
+			return getRuleContexts(ItemContext.class);
+		}
+		public ItemContext item(int i) {
+			return getRuleContext(ItemContext.class,i);
+		}
+		public EstruturasiteContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_estruturasite; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).enterEstruturasite(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).exitEstruturasite(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof T3Visitor ) return ((T3Visitor<? extends T>)visitor).visitEstruturasite(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final EstruturasiteContext estruturasite() throws RecognitionException {
+		EstruturasiteContext _localctx = new EstruturasiteContext(_ctx, getState());
+		enterRule(_localctx, 22, RULE_estruturasite);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(102);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while (_la==T__15) {
+				{
+				{
+				setState(99);
+				item();
+				}
+				}
+				setState(104);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ItemContext extends ParserRuleContext {
+		public List<TerminalNode> CADEIA() { return getTokens(T3Parser.CADEIA); }
+		public TerminalNode CADEIA(int i) {
+			return getToken(T3Parser.CADEIA, i);
+		}
+		public ItemContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_item; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).enterItem(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).exitItem(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof T3Visitor ) return ((T3Visitor<? extends T>)visitor).visitItem(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ItemContext item() throws RecognitionException {
+		ItemContext _localctx = new ItemContext(_ctx, getState());
+		enterRule(_localctx, 24, RULE_item);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(105);
+			match(T__15);
+			setState(106);
+			match(T__1);
+			setState(107);
+			match(T__5);
+			setState(108);
+			match(CADEIA);
+			setState(109);
+			match(T__4);
+			setState(110);
+			match(T__9);
+			setState(111);
+			match(CADEIA);
+			setState(112);
+			match(T__2);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class EstruturacvContext extends ParserRuleContext {
+		public List<SecoesContext> secoes() {
+			return getRuleContexts(SecoesContext.class);
+		}
+		public SecoesContext secoes(int i) {
+			return getRuleContext(SecoesContext.class,i);
+		}
+		public EstruturacvContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_estruturacv; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).enterEstruturacv(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).exitEstruturacv(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof T3Visitor ) return ((T3Visitor<? extends T>)visitor).visitEstruturacv(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final EstruturacvContext estruturacv() throws RecognitionException {
+		EstruturacvContext _localctx = new EstruturacvContext(_ctx, getState());
+		enterRule(_localctx, 26, RULE_estruturacv);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(115); 
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			do {
+				{
+				{
+				setState(114);
+				secoes();
+				}
+				}
+				setState(117); 
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			} while ( _la==T__16 || _la==T__20 );
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class SecoesContext extends ParserRuleContext {
+		public SecaoExperienciaContext secaoExperiencia() {
+			return getRuleContext(SecaoExperienciaContext.class,0);
+		}
+		public SecaoInfoAdicionalContext secaoInfoAdicional() {
+			return getRuleContext(SecaoInfoAdicionalContext.class,0);
+		}
+		public SecoesContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_secoes; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).enterSecoes(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).exitSecoes(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof T3Visitor ) return ((T3Visitor<? extends T>)visitor).visitSecoes(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final SecoesContext secoes() throws RecognitionException {
+		SecoesContext _localctx = new SecoesContext(_ctx, getState());
+		enterRule(_localctx, 28, RULE_secoes);
+		try {
+			setState(121);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case T__16:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(119);
+				secaoExperiencia();
+				}
+				break;
+			case T__20:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(120);
+				secaoInfoAdicional();
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class SecaoExperienciaContext extends ParserRuleContext {
+		public PeriodoContext periodo() {
+			return getRuleContext(PeriodoContext.class,0);
+		}
+		public List<TerminalNode> CADEIA() { return getTokens(T3Parser.CADEIA); }
+		public TerminalNode CADEIA(int i) {
+			return getToken(T3Parser.CADEIA, i);
+		}
+		public SecaoExperienciaContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_secaoExperiencia; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).enterSecaoExperiencia(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).exitSecaoExperiencia(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof T3Visitor ) return ((T3Visitor<? extends T>)visitor).visitSecaoExperiencia(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final SecaoExperienciaContext secaoExperiencia() throws RecognitionException {
+		SecaoExperienciaContext _localctx = new SecaoExperienciaContext(_ctx, getState());
+		enterRule(_localctx, 30, RULE_secaoExperiencia);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(123);
+			match(T__16);
+			setState(124);
+			match(T__1);
+			setState(125);
+			match(T__17);
+			setState(126);
+			periodo();
+			setState(127);
+			match(T__4);
+			setState(128);
+			match(T__18);
+			setState(129);
+			match(CADEIA);
+			setState(130);
+			match(T__4);
+			setState(131);
+			match(T__19);
+			setState(132);
+			match(CADEIA);
+			setState(133);
+			match(T__2);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class PeriodoContext extends ParserRuleContext {
+		public List<TerminalNode> DATA() { return getTokens(T3Parser.DATA); }
+		public TerminalNode DATA(int i) {
+			return getToken(T3Parser.DATA, i);
+		}
+		public PeriodoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_periodo; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).enterPeriodo(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).exitPeriodo(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof T3Visitor ) return ((T3Visitor<? extends T>)visitor).visitPeriodo(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final PeriodoContext periodo() throws RecognitionException {
+		PeriodoContext _localctx = new PeriodoContext(_ctx, getState());
+		enterRule(_localctx, 32, RULE_periodo);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(135);
+			match(DATA);
+			setState(136);
+			match(T__4);
+			setState(137);
+			match(DATA);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class SecaoInfoAdicionalContext extends ParserRuleContext {
+		public List<TerminalNode> CADEIA() { return getTokens(T3Parser.CADEIA); }
+		public TerminalNode CADEIA(int i) {
+			return getToken(T3Parser.CADEIA, i);
+		}
+		public SecaoInfoAdicionalContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_secaoInfoAdicional; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).enterSecaoInfoAdicional(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).exitSecaoInfoAdicional(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof T3Visitor ) return ((T3Visitor<? extends T>)visitor).visitSecaoInfoAdicional(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final SecaoInfoAdicionalContext secaoInfoAdicional() throws RecognitionException {
+		SecaoInfoAdicionalContext _localctx = new SecaoInfoAdicionalContext(_ctx, getState());
+		enterRule(_localctx, 34, RULE_secaoInfoAdicional);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(139);
+			match(T__20);
+			setState(140);
+			match(T__1);
+			setState(141);
+			match(T__5);
+			setState(142);
+			match(CADEIA);
+			setState(143);
+			match(T__4);
+			setState(144);
+			match(T__9);
+			setState(145);
+			match(CADEIA);
+			setState(146);
+			match(T__2);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\r\23\4\2\t\2\4\3"+
-		"\t\3\4\4\t\4\3\2\3\2\3\2\3\2\3\2\3\3\5\3\17\n\3\3\4\3\4\3\4\2\2\5\2\4"+
-		"\6\2\2\2\20\2\b\3\2\2\2\4\16\3\2\2\2\6\20\3\2\2\2\b\t\7\3\2\2\t\n\7\4"+
-		"\2\2\n\13\5\4\3\2\13\f\7\5\2\2\f\3\3\2\2\2\r\17\5\6\4\2\16\r\3\2\2\2\16"+
-		"\17\3\2\2\2\17\5\3\2\2\2\20\21\7\7\2\2\21\7\3\2\2\2\3\16";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\37\u0097\4\2\t\2"+
+		"\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
+		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
+		"\4\23\t\23\3\2\3\2\3\2\3\2\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3"+
+		"\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4?\n\4\3\5\3\5\3\6\3\6\3\7\3\7"+
+		"\3\b\3\b\3\t\3\t\3\t\3\t\5\tM\n\t\3\n\3\n\3\n\5\nR\n\n\3\13\7\13U\n\13"+
+		"\f\13\16\13X\13\13\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\r"+
+		"\7\rg\n\r\f\r\16\rj\13\r\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16"+
+		"\3\17\6\17v\n\17\r\17\16\17w\3\20\3\20\5\20|\n\20\3\21\3\21\3\21\3\21"+
+		"\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\22\3\22\3\22\3\22\3\23\3\23"+
+		"\3\23\3\23\3\23\3\23\3\23\3\23\3\23\3\23\2\2\24\2\4\6\b\n\f\16\20\22\24"+
+		"\26\30\32\34\36 \"$\2\3\4\2\3\3\r\16\2\u008c\2&\3\2\2\2\4,\3\2\2\2\6\65"+
+		"\3\2\2\2\b@\3\2\2\2\nB\3\2\2\2\fD\3\2\2\2\16F\3\2\2\2\20L\3\2\2\2\22Q"+
+		"\3\2\2\2\24V\3\2\2\2\26Y\3\2\2\2\30h\3\2\2\2\32k\3\2\2\2\34u\3\2\2\2\36"+
+		"{\3\2\2\2 }\3\2\2\2\"\u0089\3\2\2\2$\u008d\3\2\2\2&\'\7\3\2\2\'(\7\4\2"+
+		"\2()\5\4\3\2)*\7\5\2\2*+\5\22\n\2+\3\3\2\2\2,-\7\6\2\2-.\5\b\5\2./\7\7"+
+		"\2\2/\60\7\b\2\2\60\61\5\n\6\2\61\62\7\7\2\2\62\63\7\t\2\2\63\64\5\6\4"+
+		"\2\64\5\3\2\2\2\65\66\7\4\2\2\66\67\7\n\2\2\678\5\16\b\289\7\7\2\29:\7"+
+		"\13\2\2:>\5\20\t\2;<\7\7\2\2<=\7\f\2\2=?\5\f\7\2>;\3\2\2\2>?\3\2\2\2?"+
+		"\7\3\2\2\2@A\t\2\2\2A\t\3\2\2\2BC\7\30\2\2C\13\3\2\2\2DE\7\30\2\2E\r\3"+
+		"\2\2\2FG\7\30\2\2G\17\3\2\2\2HI\7\4\2\2IM\7\34\2\2JK\7\30\2\2KM\7\5\2"+
+		"\2LH\3\2\2\2LJ\3\2\2\2M\21\3\2\2\2NR\5\24\13\2OR\5\30\r\2PR\5\34\17\2"+
+		"QN\3\2\2\2QO\3\2\2\2QP\3\2\2\2R\23\3\2\2\2SU\5\26\f\2TS\3\2\2\2UX\3\2"+
+		"\2\2VT\3\2\2\2VW\3\2\2\2W\25\3\2\2\2XV\3\2\2\2YZ\7\17\2\2Z[\7\4\2\2[\\"+
+		"\7\b\2\2\\]\7\30\2\2]^\7\7\2\2^_\7\20\2\2_`\7\35\2\2`a\7\7\2\2ab\7\21"+
+		"\2\2bc\7\30\2\2cd\7\5\2\2d\27\3\2\2\2eg\5\32\16\2fe\3\2\2\2gj\3\2\2\2"+
+		"hf\3\2\2\2hi\3\2\2\2i\31\3\2\2\2jh\3\2\2\2kl\7\22\2\2lm\7\4\2\2mn\7\b"+
+		"\2\2no\7\30\2\2op\7\7\2\2pq\7\f\2\2qr\7\30\2\2rs\7\5\2\2s\33\3\2\2\2t"+
+		"v\5\36\20\2ut\3\2\2\2vw\3\2\2\2wu\3\2\2\2wx\3\2\2\2x\35\3\2\2\2y|\5 \21"+
+		"\2z|\5$\23\2{y\3\2\2\2{z\3\2\2\2|\37\3\2\2\2}~\7\23\2\2~\177\7\4\2\2\177"+
+		"\u0080\7\24\2\2\u0080\u0081\5\"\22\2\u0081\u0082\7\7\2\2\u0082\u0083\7"+
+		"\25\2\2\u0083\u0084\7\30\2\2\u0084\u0085\7\7\2\2\u0085\u0086\7\26\2\2"+
+		"\u0086\u0087\7\30\2\2\u0087\u0088\7\5\2\2\u0088!\3\2\2\2\u0089\u008a\7"+
+		"\35\2\2\u008a\u008b\7\7\2\2\u008b\u008c\7\35\2\2\u008c#\3\2\2\2\u008d"+
+		"\u008e\7\27\2\2\u008e\u008f\7\4\2\2\u008f\u0090\7\b\2\2\u0090\u0091\7"+
+		"\30\2\2\u0091\u0092\7\7\2\2\u0092\u0093\7\f\2\2\u0093\u0094\7\30\2\2\u0094"+
+		"\u0095\7\5\2\2\u0095%\3\2\2\2\t>LQVhw{";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

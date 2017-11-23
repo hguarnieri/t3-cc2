@@ -1,0 +1,5 @@
+site(blog,"Meu Blog")
+infopessoal("Henrique o Belo", "henrique@ufscar.br", "Escravo do curso de BCC UFSCar")
+box("Meu primeiro POST","Este eh meu primeiro post no meu primeiro blog","13/12/2017")
+
+

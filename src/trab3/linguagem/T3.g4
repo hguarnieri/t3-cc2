@@ -1,9 +1,5 @@
 grammar T3;
 
-IDENT
-    : ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '0'..'9' | '_')*
-    ;
-
 CADEIA
     : '"' ~('\n' | '\r' | '"')* '"'
     ;
@@ -12,82 +8,79 @@ NUM_INT
     : ('0'..'9')+
     ;
 
-NUM_REAL
-    : ('0'..'9')+ '.' ('0'..'9')+
-    ;
-
 COMENTARIO
     : '{' ~('\n' | '\r' | '}')* '}' {skip();}
     ;
     
-
 COMENTARIOERRO
     :   '{' (~('}'|'\n'))* '\n' {throw new ParseCancellationException("Linha "+getLine()+": comentario nao fechado");}
     ;
- 
+
+EMAIL
+    :   ~('\n' | '\r' | '"')* '@' ~('\n' | '\r' | '"')* '.com' '.br'?
+    ;
+
+DATA
+    : ('0'..'9')+ '/' ('0'..'9')+ '/' ('0'..'9')+
+    ;
 
 WS
     : (' ' | '\t' | '\r' | '\n') {skip();}
     ;
 
-site:
-	'site' '(' parametros ')';
+site
+    : 'site' '(' parametros ')' estruturas;
 
-parametros:
-    tiposite ',' titulo?;
+parametros
+    : 'tipo=' tiposite ',' 'titulo=' titulo ',' 'autor=' autor;
 
-titulo:
-    CADEIA;
+autor
+    : '(' 'nome=' nome ',' 'contato=' contato (',' 'descricao=' descricao)?
+    ;
 
-tiposite:
-//blog, cv, site
+tiposite
+    : 'blog' | 'cv' | 'site';
 
-descricao:
-    CADEIA;
+titulo
+    : CADEIA;
 
-info-pessoal:
-    '(' nome ',' data_nascimento ',' endereco ',' contato ')';
+descricao
+    : CADEIA;
 
-contato:
-    '(' email | telefone ')';
+nome
+    : CADEIA;
 
-email: 
-    CADEIA '@' CADEIA '.com' | 'br'  ;
+contato
+    : '(' EMAIL | CADEIA ')';
 
-telefone:
-        NUM_INT;
+estruturas
+    : estruturablog | estruturasite | estruturacv;
 
-box:
-    'box' '(' tiposite ',' tipobox ',' | //obrigatorio para todos //blog,site,cv   //post,edu,exp,outros
-              titulo ',' conteudo ',' data | //blog
-              periodo ',' local ',' curso | //cv- educacao
-              periodo ',' local ',' curso | //cv- experiencias
-              titulo ',' conteudo | //site
-              itens* ')'; //cv-itens
-          
-itens:
-    CADEIA ;
+estruturablog
+    : (post)*;
 
-tipobox:
-//post,educacao,experiencias,outras_infos,site-content
+post
+    : 'post' '(' 'titulo=' CADEIA ',' 'data=' DATA ',' 'conteudo=' CADEIA ')';
 
-data:   
-    '"' NUM_INT ',' NUM_INT ',' NUM_INT '"';
+estruturasite
+    : (item)*;
 
-conteudo:
-    CADEIA;
+item
+    : 'item' '(' 'titulo=' CADEIA ',' 'descricao=' CADEIA ')';
 
-local:
-    CADEIA;
+estruturacv
+    : (secoes)+;
 
-curso:
-    CADEIA;
+secoes
+    : secaoExperiencia | secaoInfoAdicional;
 
-periodo:
-    'Inicio:' data ',' 'Termino:' data ;
+secaoExperiencia
+    : 'experiencia' '(' 'periodo=' periodo ',' 'organizacao=' CADEIA ',' 'atividade=' CADEIA ')';
 
+periodo
+    : DATA ',' DATA;
 
+secaoInfoAdicional
+    : 'infoAdicional' '(' 'titulo=' CADEIA ',' 'descricao=' CADEIA ')';
 
-
-    
 ERROR: . { throw new ParseCancellationException("Linha " + getLine() + ": "+ getText() +" - simbolo nao identificado"); };
