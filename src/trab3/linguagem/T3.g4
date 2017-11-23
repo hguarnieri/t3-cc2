@@ -12,87 +12,75 @@ COMENTARIO
     : '{' ~('\n' | '\r' | '}')* '}' {skip();}
     ;
     
-
 COMENTARIOERRO
     :   '{' (~('}'|'\n'))* '\n' {throw new ParseCancellationException("Linha "+getLine()+": comentario nao fechado");}
     ;
 
 EMAIL
     :   ~('\n' | '\r' | '"')* '@' ~('\n' | '\r' | '"')* '.com' '.br'?
- 
+    ;
+
+DATA
+    : ('0'..'9')+ '/' ('0'..'9')+ '/' ('0'..'9')+
+    ;
 
 WS
     : (' ' | '\t' | '\r' | '\n') {skip();}
     ;
 
+site
+    : 'site' '(' parametros ')' estruturas;
 
-site:
-	'site' '(' parametros ')' (estruturaSite | estruturaBlog | estruturaCV ); //adicionar palavras chaves para visualizacao de codigo
+parametros
+    : 'tipo=' tiposite ',' 'titulo=' titulo ',' 'autor=' autor;
 
+autor
+    : '(' 'nome=' nome ',' 'contato=' contato (',' 'descricao=' descricao)?
+    ;
 
-parametros:
-    tiposite (',' titulo)?;
+tiposite
+    : 'blog' | 'cv' | 'site';
 
-titulo:
-    CADEIA;
+titulo
+    : CADEIA;
 
-tiposite:
-        'blog' | 'cv' | 'site';
+descricao
+    : CADEIA;
 
-descricao:
-    'descricao' '(' CADEIA ')';
+nome
+    : CADEIA;
 
-infopessoal:
-    'infopessoal' '(' nome ',' data ',' endereco ',' contato ')' | // cv
-    'infopessoal' '(' nome ',' contato ',' perfil ')' ; // blog
+contato
+    : '(' EMAIL | CADEIA ')';
 
-nome:   
-    CADEIA;
+estruturas
+    : estruturablog | estruturasite | estruturacv;
 
-contato:
-    '(' email | telefone ')';
+estruturablog
+    : (post)*;
 
-perfil:
-    CADEIA;
+post
+    : 'post' '(' 'titulo=' CADEIA ',' 'data=' DATA ',' 'conteudo=' CADEIA ')';
 
-email: 
-    EMAIL ;
+estruturasite
+    : (item)*;
 
-telefone:
-        NUM_INT;
+item
+    : 'item' '(' 'titulo=' CADEIA ',' 'descricao=' CADEIA ')';
 
-endereco:
-    CADEIA; 
+estruturacv
+    : (secoes)+;
 
-box:													//semanticamente
+secoes
+    : secaoExperiencia | secaoInfoAdicional;
 
-    'boxBlog' '(' tiposite ',' titulo ',' conteudo ',' data ')' | //blog
-    'boxCvAtividade' '(' tipobox ',' data ',' data ',' local ',' atividade ')' | //cv- educacao
-    'boxCvItens' '(' tipobox ',' titulo ',' descricao ')' |  //cv-itens
-    'boxSite' '(' titulo ',' conteudo ')' ; //site
+secaoExperiencia
+    : 'experiencia' '(' 'periodo=' periodo ',' 'organizacao=' CADEIA ',' 'atividade=' CADEIA ')';
 
-tipobox:
-    'post' | 'educacao' | 'experiencia' | 'infoadicional' | 'conteudo' ;
+periodo
+    : DATA ',' DATA;
 
-data:   
-    '"' NUM_INT '/' NUM_INT '/' NUM_INT '"';
+secaoInfoAdicional
+    : 'infoAdicional' '(' 'titulo=' CADEIA ',' 'descricao=' CADEIA ')';
 
-conteudo:
-    CADEIA;
-
-local:
-    CADEIA;
-
-curso:
-    CADEIA;
-
-funcao:
-    CADEIA;
-
-
-aviso:
-    CADEIA;
-
-
-    
 ERROR: . { throw new ParseCancellationException("Linha " + getLine() + ": "+ getText() +" - simbolo nao identificado"); };

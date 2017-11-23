@@ -40,13 +40,13 @@ public class T3BaseListener implements T3Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTitulo(T3Parser.TituloContext ctx) { }
+	@Override public void enterAutor(T3Parser.AutorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTitulo(T3Parser.TituloContext ctx) { }
+	@Override public void exitAutor(T3Parser.AutorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -64,6 +64,18 @@ public class T3BaseListener implements T3Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterTitulo(T3Parser.TituloContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTitulo(T3Parser.TituloContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterDescricao(T3Parser.DescricaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -71,18 +83,6 @@ public class T3BaseListener implements T3Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitDescricao(T3Parser.DescricaoContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterInfopessoal(T3Parser.InfopessoalContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitInfopessoal(T3Parser.InfopessoalContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -112,121 +112,121 @@ public class T3BaseListener implements T3Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEmail(T3Parser.EmailContext ctx) { }
+	@Override public void enterEstruturas(T3Parser.EstruturasContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEmail(T3Parser.EmailContext ctx) { }
+	@Override public void exitEstruturas(T3Parser.EstruturasContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTelefone(T3Parser.TelefoneContext ctx) { }
+	@Override public void enterEstruturablog(T3Parser.EstruturablogContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTelefone(T3Parser.TelefoneContext ctx) { }
+	@Override public void exitEstruturablog(T3Parser.EstruturablogContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEndereco(T3Parser.EnderecoContext ctx) { }
+	@Override public void enterPost(T3Parser.PostContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEndereco(T3Parser.EnderecoContext ctx) { }
+	@Override public void exitPost(T3Parser.PostContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBox(T3Parser.BoxContext ctx) { }
+	@Override public void enterEstruturasite(T3Parser.EstruturasiteContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBox(T3Parser.BoxContext ctx) { }
+	@Override public void exitEstruturasite(T3Parser.EstruturasiteContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTipobox(T3Parser.TipoboxContext ctx) { }
+	@Override public void enterItem(T3Parser.ItemContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTipobox(T3Parser.TipoboxContext ctx) { }
+	@Override public void exitItem(T3Parser.ItemContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterData(T3Parser.DataContext ctx) { }
+	@Override public void enterEstruturacv(T3Parser.EstruturacvContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitData(T3Parser.DataContext ctx) { }
+	@Override public void exitEstruturacv(T3Parser.EstruturacvContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterConteudo(T3Parser.ConteudoContext ctx) { }
+	@Override public void enterSecoes(T3Parser.SecoesContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitConteudo(T3Parser.ConteudoContext ctx) { }
+	@Override public void exitSecoes(T3Parser.SecoesContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLocal(T3Parser.LocalContext ctx) { }
+	@Override public void enterSecaoExperiencia(T3Parser.SecaoExperienciaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLocal(T3Parser.LocalContext ctx) { }
+	@Override public void exitSecaoExperiencia(T3Parser.SecaoExperienciaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCurso(T3Parser.CursoContext ctx) { }
+	@Override public void enterPeriodo(T3Parser.PeriodoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCurso(T3Parser.CursoContext ctx) { }
+	@Override public void exitPeriodo(T3Parser.PeriodoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAviso(T3Parser.AvisoContext ctx) { }
+	@Override public void enterSecaoInfoAdicional(T3Parser.SecaoInfoAdicionalContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAviso(T3Parser.AvisoContext ctx) { }
+	@Override public void exitSecaoInfoAdicional(T3Parser.SecaoInfoAdicionalContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

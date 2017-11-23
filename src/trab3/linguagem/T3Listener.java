@@ -28,15 +28,15 @@ public interface T3Listener extends ParseTreeListener {
 	 */
 	void exitParametros(T3Parser.ParametrosContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link T3Parser#titulo}.
+	 * Enter a parse tree produced by {@link T3Parser#autor}.
 	 * @param ctx the parse tree
 	 */
-	void enterTitulo(T3Parser.TituloContext ctx);
+	void enterAutor(T3Parser.AutorContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link T3Parser#titulo}.
+	 * Exit a parse tree produced by {@link T3Parser#autor}.
 	 * @param ctx the parse tree
 	 */
-	void exitTitulo(T3Parser.TituloContext ctx);
+	void exitAutor(T3Parser.AutorContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link T3Parser#tiposite}.
 	 * @param ctx the parse tree
@@ -48,6 +48,16 @@ public interface T3Listener extends ParseTreeListener {
 	 */
 	void exitTiposite(T3Parser.TipositeContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link T3Parser#titulo}.
+	 * @param ctx the parse tree
+	 */
+	void enterTitulo(T3Parser.TituloContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link T3Parser#titulo}.
+	 * @param ctx the parse tree
+	 */
+	void exitTitulo(T3Parser.TituloContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link T3Parser#descricao}.
 	 * @param ctx the parse tree
 	 */
@@ -57,16 +67,6 @@ public interface T3Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitDescricao(T3Parser.DescricaoContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link T3Parser#infopessoal}.
-	 * @param ctx the parse tree
-	 */
-	void enterInfopessoal(T3Parser.InfopessoalContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link T3Parser#infopessoal}.
-	 * @param ctx the parse tree
-	 */
-	void exitInfopessoal(T3Parser.InfopessoalContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link T3Parser#nome}.
 	 * @param ctx the parse tree
@@ -88,103 +88,103 @@ public interface T3Listener extends ParseTreeListener {
 	 */
 	void exitContato(T3Parser.ContatoContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link T3Parser#email}.
+	 * Enter a parse tree produced by {@link T3Parser#estruturas}.
 	 * @param ctx the parse tree
 	 */
-	void enterEmail(T3Parser.EmailContext ctx);
+	void enterEstruturas(T3Parser.EstruturasContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link T3Parser#email}.
+	 * Exit a parse tree produced by {@link T3Parser#estruturas}.
 	 * @param ctx the parse tree
 	 */
-	void exitEmail(T3Parser.EmailContext ctx);
+	void exitEstruturas(T3Parser.EstruturasContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link T3Parser#telefone}.
+	 * Enter a parse tree produced by {@link T3Parser#estruturablog}.
 	 * @param ctx the parse tree
 	 */
-	void enterTelefone(T3Parser.TelefoneContext ctx);
+	void enterEstruturablog(T3Parser.EstruturablogContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link T3Parser#telefone}.
+	 * Exit a parse tree produced by {@link T3Parser#estruturablog}.
 	 * @param ctx the parse tree
 	 */
-	void exitTelefone(T3Parser.TelefoneContext ctx);
+	void exitEstruturablog(T3Parser.EstruturablogContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link T3Parser#endereco}.
+	 * Enter a parse tree produced by {@link T3Parser#post}.
 	 * @param ctx the parse tree
 	 */
-	void enterEndereco(T3Parser.EnderecoContext ctx);
+	void enterPost(T3Parser.PostContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link T3Parser#endereco}.
+	 * Exit a parse tree produced by {@link T3Parser#post}.
 	 * @param ctx the parse tree
 	 */
-	void exitEndereco(T3Parser.EnderecoContext ctx);
+	void exitPost(T3Parser.PostContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link T3Parser#box}.
+	 * Enter a parse tree produced by {@link T3Parser#estruturasite}.
 	 * @param ctx the parse tree
 	 */
-	void enterBox(T3Parser.BoxContext ctx);
+	void enterEstruturasite(T3Parser.EstruturasiteContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link T3Parser#box}.
+	 * Exit a parse tree produced by {@link T3Parser#estruturasite}.
 	 * @param ctx the parse tree
 	 */
-	void exitBox(T3Parser.BoxContext ctx);
+	void exitEstruturasite(T3Parser.EstruturasiteContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link T3Parser#tipobox}.
+	 * Enter a parse tree produced by {@link T3Parser#item}.
 	 * @param ctx the parse tree
 	 */
-	void enterTipobox(T3Parser.TipoboxContext ctx);
+	void enterItem(T3Parser.ItemContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link T3Parser#tipobox}.
+	 * Exit a parse tree produced by {@link T3Parser#item}.
 	 * @param ctx the parse tree
 	 */
-	void exitTipobox(T3Parser.TipoboxContext ctx);
+	void exitItem(T3Parser.ItemContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link T3Parser#data}.
+	 * Enter a parse tree produced by {@link T3Parser#estruturacv}.
 	 * @param ctx the parse tree
 	 */
-	void enterData(T3Parser.DataContext ctx);
+	void enterEstruturacv(T3Parser.EstruturacvContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link T3Parser#data}.
+	 * Exit a parse tree produced by {@link T3Parser#estruturacv}.
 	 * @param ctx the parse tree
 	 */
-	void exitData(T3Parser.DataContext ctx);
+	void exitEstruturacv(T3Parser.EstruturacvContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link T3Parser#conteudo}.
+	 * Enter a parse tree produced by {@link T3Parser#secoes}.
 	 * @param ctx the parse tree
 	 */
-	void enterConteudo(T3Parser.ConteudoContext ctx);
+	void enterSecoes(T3Parser.SecoesContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link T3Parser#conteudo}.
+	 * Exit a parse tree produced by {@link T3Parser#secoes}.
 	 * @param ctx the parse tree
 	 */
-	void exitConteudo(T3Parser.ConteudoContext ctx);
+	void exitSecoes(T3Parser.SecoesContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link T3Parser#local}.
+	 * Enter a parse tree produced by {@link T3Parser#secaoExperiencia}.
 	 * @param ctx the parse tree
 	 */
-	void enterLocal(T3Parser.LocalContext ctx);
+	void enterSecaoExperiencia(T3Parser.SecaoExperienciaContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link T3Parser#local}.
+	 * Exit a parse tree produced by {@link T3Parser#secaoExperiencia}.
 	 * @param ctx the parse tree
 	 */
-	void exitLocal(T3Parser.LocalContext ctx);
+	void exitSecaoExperiencia(T3Parser.SecaoExperienciaContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link T3Parser#curso}.
+	 * Enter a parse tree produced by {@link T3Parser#periodo}.
 	 * @param ctx the parse tree
 	 */
-	void enterCurso(T3Parser.CursoContext ctx);
+	void enterPeriodo(T3Parser.PeriodoContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link T3Parser#curso}.
+	 * Exit a parse tree produced by {@link T3Parser#periodo}.
 	 * @param ctx the parse tree
 	 */
-	void exitCurso(T3Parser.CursoContext ctx);
+	void exitPeriodo(T3Parser.PeriodoContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link T3Parser#aviso}.
+	 * Enter a parse tree produced by {@link T3Parser#secaoInfoAdicional}.
 	 * @param ctx the parse tree
 	 */
-	void enterAviso(T3Parser.AvisoContext ctx);
+	void enterSecaoInfoAdicional(T3Parser.SecaoInfoAdicionalContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link T3Parser#aviso}.
+	 * Exit a parse tree produced by {@link T3Parser#secaoInfoAdicional}.
 	 * @param ctx the parse tree
 	 */
-	void exitAviso(T3Parser.AvisoContext ctx);
+	void exitSecaoInfoAdicional(T3Parser.SecaoInfoAdicionalContext ctx);
 }
