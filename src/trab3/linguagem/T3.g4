@@ -76,7 +76,17 @@ secoes
     : secaoExperiencia | secaoInfoAdicional;
 
 secaoExperiencia
-    : 'experiencia' '(' 'periodo=' periodo ',' 'organizacao=' CADEIA ',' 'atividade=' CADEIA ')';
+    : 'experiencia' '(' 'tipo=' tipoexperiencia ',' 'periodo=' periodo ',' 
+        'organizacao=' organizacao ',' 'atividade=' atividade ')';
+
+tipoexperiencia returns [int tipo]
+    : 'profissional' { $tipo = 1; } | 'educacional' { $tipo = 2; };
+
+organizacao
+    : CADEIA;
+
+atividade
+    : CADEIA;
 
 periodo
     : DATA ',' DATA;

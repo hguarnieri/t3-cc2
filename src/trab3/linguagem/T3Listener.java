@@ -168,6 +168,36 @@ public interface T3Listener extends ParseTreeListener {
 	 */
 	void exitSecaoExperiencia(T3Parser.SecaoExperienciaContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link T3Parser#tipoexperiencia}.
+	 * @param ctx the parse tree
+	 */
+	void enterTipoexperiencia(T3Parser.TipoexperienciaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link T3Parser#tipoexperiencia}.
+	 * @param ctx the parse tree
+	 */
+	void exitTipoexperiencia(T3Parser.TipoexperienciaContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link T3Parser#organizacao}.
+	 * @param ctx the parse tree
+	 */
+	void enterOrganizacao(T3Parser.OrganizacaoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link T3Parser#organizacao}.
+	 * @param ctx the parse tree
+	 */
+	void exitOrganizacao(T3Parser.OrganizacaoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link T3Parser#atividade}.
+	 * @param ctx the parse tree
+	 */
+	void enterAtividade(T3Parser.AtividadeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link T3Parser#atividade}.
+	 * @param ctx the parse tree
+	 */
+	void exitAtividade(T3Parser.AtividadeContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link T3Parser#periodo}.
 	 * @param ctx the parse tree
 	 */

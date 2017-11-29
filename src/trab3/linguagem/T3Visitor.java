@@ -107,6 +107,24 @@ public interface T3Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSecaoExperiencia(T3Parser.SecaoExperienciaContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link T3Parser#tipoexperiencia}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTipoexperiencia(T3Parser.TipoexperienciaContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link T3Parser#organizacao}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOrganizacao(T3Parser.OrganizacaoContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link T3Parser#atividade}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAtividade(T3Parser.AtividadeContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link T3Parser#periodo}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
