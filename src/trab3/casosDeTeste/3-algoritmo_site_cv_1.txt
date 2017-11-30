@@ -1,8 +1,11 @@
+var autor1 : autor = (nome="Henrique Guarnieri",
+    contato="henrique@grupo11.com",
+    descricao="Aluno de Ciencia da Computacao da turma de 2012")
+
 site(tipo=cv,
     titulo="Curriculo Vittae",
-    autor=(nome="Henrique Guarnieri",
-    contato="henrique@grupo11.com",
-    descricao="Aluno de Ciencia da Computacao da turma de 2012"))
+    autor=autor1)
+
 experiencia(tipo=educacional, periodo=01/03/2012,31/12/2017, organizacao="UFSCar", atividade="Ciencia da Computação")
 experiencia(tipo=educacional, periodo=01/03/2015,31/12/2015, organizacao="University of Adelaide", atividade="Computer Science")
 experiencia(tipo=profissional, periodo=01/08/2015,29/02/2016, organizacao="University of Adelaide", atividade="Programmer")

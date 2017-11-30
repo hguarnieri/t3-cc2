@@ -19,34 +19,35 @@ public class T3Parser extends Parser {
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
 		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, T__15=16, T__16=17, 
-		T__17=18, T__18=19, T__19=20, T__20=21, T__21=22, T__22=23, CADEIA=24, 
-		NUM_INT=25, COMENTARIO=26, COMENTARIOERRO=27, EMAIL=28, DATA=29, WS=30, 
-		ERROR=31;
+		T__17=18, T__18=19, T__19=20, T__20=21, T__21=22, T__22=23, T__23=24, 
+		T__24=25, T__25=26, T__26=27, IDENT=28, CADEIA=29, NUM_INT=30, COMENTARIO=31, 
+		COMENTARIOERRO=32, EMAIL=33, DATA=34, WS=35, ERROR=36;
 	public static final int
-		RULE_site = 0, RULE_parametros = 1, RULE_autor = 2, RULE_tiposite = 3, 
-		RULE_titulo = 4, RULE_descricao = 5, RULE_nome = 6, RULE_contato = 7, 
-		RULE_estruturas = 8, RULE_estruturablog = 9, RULE_post = 10, RULE_estruturasite = 11, 
-		RULE_item = 12, RULE_estruturacv = 13, RULE_secoes = 14, RULE_secaoExperiencia = 15, 
-		RULE_tipoexperiencia = 16, RULE_organizacao = 17, RULE_atividade = 18, 
-		RULE_periodo = 19, RULE_secaoInfoAdicional = 20;
+		RULE_site = 0, RULE_parametros = 1, RULE_identificador = 2, RULE_var = 3, 
+		RULE_tipo_var = 4, RULE_autor = 5, RULE_tiposite = 6, RULE_titulo = 7, 
+		RULE_descricao = 8, RULE_nome = 9, RULE_contato = 10, RULE_estruturas = 11, 
+		RULE_estruturablog = 12, RULE_post = 13, RULE_estruturasite = 14, RULE_item = 15, 
+		RULE_estruturacv = 16, RULE_secoes = 17, RULE_secaoExperiencia = 18, RULE_tipoexperiencia = 19, 
+		RULE_organizacao = 20, RULE_atividade = 21, RULE_periodo = 22, RULE_secaoInfoAdicional = 23;
 	public static final String[] ruleNames = {
-		"site", "parametros", "autor", "tiposite", "titulo", "descricao", "nome", 
-		"contato", "estruturas", "estruturablog", "post", "estruturasite", "item", 
-		"estruturacv", "secoes", "secaoExperiencia", "tipoexperiencia", "organizacao", 
-		"atividade", "periodo", "secaoInfoAdicional"
+		"site", "parametros", "identificador", "var", "tipo_var", "autor", "tiposite", 
+		"titulo", "descricao", "nome", "contato", "estruturas", "estruturablog", 
+		"post", "estruturasite", "item", "estruturacv", "secoes", "secaoExperiencia", 
+		"tipoexperiencia", "organizacao", "atividade", "periodo", "secaoInfoAdicional"
 	};
 
 	private static final String[] _LITERAL_NAMES = {
 		null, "'site'", "'('", "')'", "'tipo='", "','", "'titulo='", "'autor='", 
-		"'nome='", "'contato='", "'descricao='", "'blog'", "'cv'", "'post'", "'data='", 
-		"'conteudo='", "'item'", "'experiencia'", "'periodo='", "'organizacao='", 
-		"'atividade='", "'profissional'", "'educacional'", "'infoAdicional'"
+		"'var'", "':'", "'='", "'autor'", "'nome='", "'contato='", "'descricao='", 
+		"'blog'", "'cv'", "'post'", "'data='", "'conteudo='", "'item'", "'experiencia'", 
+		"'periodo='", "'organizacao='", "'atividade='", "'profissional'", "'educacional'", 
+		"'infoAdicional'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
 		null, null, null, null, null, null, null, null, null, null, null, null, 
 		null, null, null, null, null, null, null, null, null, null, null, null, 
-		"CADEIA", "NUM_INT", "COMENTARIO", "COMENTARIOERRO", "EMAIL", "DATA", 
-		"WS", "ERROR"
+		null, null, null, null, "IDENT", "CADEIA", "NUM_INT", "COMENTARIO", "COMENTARIOERRO", 
+		"EMAIL", "DATA", "WS", "ERROR"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
@@ -104,6 +105,12 @@ public class T3Parser extends Parser {
 		public EstruturasContext estruturas() {
 			return getRuleContext(EstruturasContext.class,0);
 		}
+		public List<VarContext> var() {
+			return getRuleContexts(VarContext.class);
+		}
+		public VarContext var(int i) {
+			return getRuleContext(VarContext.class,i);
+		}
 		public SiteContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -126,18 +133,33 @@ public class T3Parser extends Parser {
 	public final SiteContext site() throws RecognitionException {
 		SiteContext _localctx = new SiteContext(_ctx, getState());
 		enterRule(_localctx, 0, RULE_site);
+		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(42);
+			setState(51);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while (_la==T__7) {
+				{
+				{
+				setState(48);
+				var();
+				}
+				}
+				setState(53);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			setState(54);
 			match(T__0);
-			setState(43);
+			setState(55);
 			match(T__1);
-			setState(44);
+			setState(56);
 			parametros();
-			setState(45);
+			setState(57);
 			match(T__2);
-			setState(46);
+			setState(58);
 			estruturas();
 			}
 		}
@@ -159,8 +181,8 @@ public class T3Parser extends Parser {
 		public TituloContext titulo() {
 			return getRuleContext(TituloContext.class,0);
 		}
-		public AutorContext autor() {
-			return getRuleContext(AutorContext.class,0);
+		public IdentificadorContext identificador() {
+			return getRuleContext(IdentificadorContext.class,0);
 		}
 		public ParametrosContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -187,22 +209,169 @@ public class T3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(48);
+			setState(60);
 			match(T__3);
-			setState(49);
+			setState(61);
 			tiposite();
-			setState(50);
+			setState(62);
 			match(T__4);
-			setState(51);
+			setState(63);
 			match(T__5);
-			setState(52);
+			setState(64);
 			titulo();
-			setState(53);
+			setState(65);
 			match(T__4);
-			setState(54);
+			setState(66);
 			match(T__6);
-			setState(55);
+			setState(67);
+			identificador();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class IdentificadorContext extends ParserRuleContext {
+		public TerminalNode IDENT() { return getToken(T3Parser.IDENT, 0); }
+		public IdentificadorContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_identificador; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).enterIdentificador(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).exitIdentificador(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof T3Visitor ) return ((T3Visitor<? extends T>)visitor).visitIdentificador(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final IdentificadorContext identificador() throws RecognitionException {
+		IdentificadorContext _localctx = new IdentificadorContext(_ctx, getState());
+		enterRule(_localctx, 4, RULE_identificador);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(69);
+			match(IDENT);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class VarContext extends ParserRuleContext {
+		public IdentificadorContext identificador() {
+			return getRuleContext(IdentificadorContext.class,0);
+		}
+		public Tipo_varContext tipo_var() {
+			return getRuleContext(Tipo_varContext.class,0);
+		}
+		public AutorContext autor() {
+			return getRuleContext(AutorContext.class,0);
+		}
+		public VarContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_var; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).enterVar(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).exitVar(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof T3Visitor ) return ((T3Visitor<? extends T>)visitor).visitVar(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final VarContext var() throws RecognitionException {
+		VarContext _localctx = new VarContext(_ctx, getState());
+		enterRule(_localctx, 6, RULE_var);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(71);
+			match(T__7);
+			setState(72);
+			identificador();
+			setState(73);
+			match(T__8);
+			setState(74);
+			tipo_var();
+			setState(75);
+			match(T__9);
+			{
+			setState(76);
 			autor();
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Tipo_varContext extends ParserRuleContext {
+		public int tipo;
+		public Tipo_varContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_tipo_var; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).enterTipo_var(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof T3Listener ) ((T3Listener)listener).exitTipo_var(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof T3Visitor ) return ((T3Visitor<? extends T>)visitor).visitTipo_var(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Tipo_varContext tipo_var() throws RecognitionException {
+		Tipo_varContext _localctx = new Tipo_varContext(_ctx, getState());
+		enterRule(_localctx, 8, RULE_tipo_var);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(78);
+			match(T__10);
+			 ((Tipo_varContext)_localctx).tipo = 1; 
 			}
 		}
 		catch (RecognitionException re) {
@@ -247,29 +416,29 @@ public class T3Parser extends Parser {
 
 	public final AutorContext autor() throws RecognitionException {
 		AutorContext _localctx = new AutorContext(_ctx, getState());
-		enterRule(_localctx, 4, RULE_autor);
+		enterRule(_localctx, 10, RULE_autor);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(57);
+			setState(81);
 			match(T__1);
-			setState(58);
-			match(T__7);
-			setState(59);
+			setState(82);
+			match(T__11);
+			setState(83);
 			nome();
-			setState(60);
+			setState(84);
 			match(T__4);
-			setState(61);
-			match(T__8);
-			setState(62);
+			setState(85);
+			match(T__12);
+			setState(86);
 			contato();
-			setState(63);
+			setState(87);
 			match(T__4);
-			setState(64);
-			match(T__9);
-			setState(65);
+			setState(88);
+			match(T__13);
+			setState(89);
 			descricao();
-			setState(66);
+			setState(90);
 			match(T__2);
 			}
 		}
@@ -306,14 +475,14 @@ public class T3Parser extends Parser {
 
 	public final TipositeContext tiposite() throws RecognitionException {
 		TipositeContext _localctx = new TipositeContext(_ctx, getState());
-		enterRule(_localctx, 6, RULE_tiposite);
+		enterRule(_localctx, 12, RULE_tiposite);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(68);
+			setState(92);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__10) | (1L << T__11))) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__14) | (1L << T__15))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
 			else {
@@ -357,11 +526,11 @@ public class T3Parser extends Parser {
 
 	public final TituloContext titulo() throws RecognitionException {
 		TituloContext _localctx = new TituloContext(_ctx, getState());
-		enterRule(_localctx, 8, RULE_titulo);
+		enterRule(_localctx, 14, RULE_titulo);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(70);
+			setState(94);
 			match(CADEIA);
 			}
 		}
@@ -399,11 +568,11 @@ public class T3Parser extends Parser {
 
 	public final DescricaoContext descricao() throws RecognitionException {
 		DescricaoContext _localctx = new DescricaoContext(_ctx, getState());
-		enterRule(_localctx, 10, RULE_descricao);
+		enterRule(_localctx, 16, RULE_descricao);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(72);
+			setState(96);
 			match(CADEIA);
 			}
 		}
@@ -441,11 +610,11 @@ public class T3Parser extends Parser {
 
 	public final NomeContext nome() throws RecognitionException {
 		NomeContext _localctx = new NomeContext(_ctx, getState());
-		enterRule(_localctx, 12, RULE_nome);
+		enterRule(_localctx, 18, RULE_nome);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(74);
+			setState(98);
 			match(CADEIA);
 			}
 		}
@@ -484,12 +653,12 @@ public class T3Parser extends Parser {
 
 	public final ContatoContext contato() throws RecognitionException {
 		ContatoContext _localctx = new ContatoContext(_ctx, getState());
-		enterRule(_localctx, 14, RULE_contato);
+		enterRule(_localctx, 20, RULE_contato);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(76);
+			setState(100);
 			_la = _input.LA(1);
 			if ( !(_la==CADEIA || _la==EMAIL) ) {
 			_errHandler.recoverInline(this);
@@ -543,29 +712,29 @@ public class T3Parser extends Parser {
 
 	public final EstruturasContext estruturas() throws RecognitionException {
 		EstruturasContext _localctx = new EstruturasContext(_ctx, getState());
-		enterRule(_localctx, 16, RULE_estruturas);
+		enterRule(_localctx, 22, RULE_estruturas);
 		try {
-			setState(81);
+			setState(105);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,0,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,1,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(78);
+				setState(102);
 				estruturablog();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(79);
+				setState(103);
 				estruturasite();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(80);
+				setState(104);
 				estruturacv();
 				}
 				break;
@@ -610,22 +779,22 @@ public class T3Parser extends Parser {
 
 	public final EstruturablogContext estruturablog() throws RecognitionException {
 		EstruturablogContext _localctx = new EstruturablogContext(_ctx, getState());
-		enterRule(_localctx, 18, RULE_estruturablog);
+		enterRule(_localctx, 24, RULE_estruturablog);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(86);
+			setState(110);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T__12) {
+			while (_la==T__16) {
 				{
 				{
-				setState(83);
+				setState(107);
 				post();
 				}
 				}
-				setState(88);
+				setState(112);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -669,31 +838,31 @@ public class T3Parser extends Parser {
 
 	public final PostContext post() throws RecognitionException {
 		PostContext _localctx = new PostContext(_ctx, getState());
-		enterRule(_localctx, 20, RULE_post);
+		enterRule(_localctx, 26, RULE_post);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(89);
-			match(T__12);
-			setState(90);
+			setState(113);
+			match(T__16);
+			setState(114);
 			match(T__1);
-			setState(91);
+			setState(115);
 			match(T__5);
-			setState(92);
+			setState(116);
 			match(CADEIA);
-			setState(93);
+			setState(117);
 			match(T__4);
-			setState(94);
-			match(T__13);
-			setState(95);
+			setState(118);
+			match(T__17);
+			setState(119);
 			match(DATA);
-			setState(96);
+			setState(120);
 			match(T__4);
-			setState(97);
-			match(T__14);
-			setState(98);
+			setState(121);
+			match(T__18);
+			setState(122);
 			match(CADEIA);
-			setState(99);
+			setState(123);
 			match(T__2);
 			}
 		}
@@ -736,22 +905,22 @@ public class T3Parser extends Parser {
 
 	public final EstruturasiteContext estruturasite() throws RecognitionException {
 		EstruturasiteContext _localctx = new EstruturasiteContext(_ctx, getState());
-		enterRule(_localctx, 22, RULE_estruturasite);
+		enterRule(_localctx, 28, RULE_estruturasite);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(104);
+			setState(128);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T__15) {
+			while (_la==T__19) {
 				{
 				{
-				setState(101);
+				setState(125);
 				item();
 				}
 				}
-				setState(106);
+				setState(130);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -794,25 +963,25 @@ public class T3Parser extends Parser {
 
 	public final ItemContext item() throws RecognitionException {
 		ItemContext _localctx = new ItemContext(_ctx, getState());
-		enterRule(_localctx, 24, RULE_item);
+		enterRule(_localctx, 30, RULE_item);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(107);
-			match(T__15);
-			setState(108);
+			setState(131);
+			match(T__19);
+			setState(132);
 			match(T__1);
-			setState(109);
+			setState(133);
 			match(T__5);
-			setState(110);
+			setState(134);
 			match(CADEIA);
-			setState(111);
+			setState(135);
 			match(T__4);
-			setState(112);
-			match(T__9);
-			setState(113);
+			setState(136);
+			match(T__13);
+			setState(137);
 			match(CADEIA);
-			setState(114);
+			setState(138);
 			match(T__2);
 			}
 		}
@@ -855,25 +1024,25 @@ public class T3Parser extends Parser {
 
 	public final EstruturacvContext estruturacv() throws RecognitionException {
 		EstruturacvContext _localctx = new EstruturacvContext(_ctx, getState());
-		enterRule(_localctx, 26, RULE_estruturacv);
+		enterRule(_localctx, 32, RULE_estruturacv);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(117); 
+			setState(141); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(116);
+				setState(140);
 				secoes();
 				}
 				}
-				setState(119); 
+				setState(143); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( _la==T__16 || _la==T__22 );
+			} while ( _la==T__20 || _la==T__26 );
 			}
 		}
 		catch (RecognitionException re) {
@@ -915,22 +1084,22 @@ public class T3Parser extends Parser {
 
 	public final SecoesContext secoes() throws RecognitionException {
 		SecoesContext _localctx = new SecoesContext(_ctx, getState());
-		enterRule(_localctx, 28, RULE_secoes);
+		enterRule(_localctx, 34, RULE_secoes);
 		try {
-			setState(123);
+			setState(147);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__16:
+			case T__20:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(121);
+				setState(145);
 				secaoExperiencia();
 				}
 				break;
-			case T__22:
+			case T__26:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(122);
+				setState(146);
 				secaoInfoAdicional();
 				}
 				break;
@@ -983,37 +1152,37 @@ public class T3Parser extends Parser {
 
 	public final SecaoExperienciaContext secaoExperiencia() throws RecognitionException {
 		SecaoExperienciaContext _localctx = new SecaoExperienciaContext(_ctx, getState());
-		enterRule(_localctx, 30, RULE_secaoExperiencia);
+		enterRule(_localctx, 36, RULE_secaoExperiencia);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(125);
-			match(T__16);
-			setState(126);
+			setState(149);
+			match(T__20);
+			setState(150);
 			match(T__1);
-			setState(127);
+			setState(151);
 			match(T__3);
-			setState(128);
+			setState(152);
 			tipoexperiencia();
-			setState(129);
+			setState(153);
 			match(T__4);
-			setState(130);
-			match(T__17);
-			setState(131);
+			setState(154);
+			match(T__21);
+			setState(155);
 			periodo();
-			setState(132);
+			setState(156);
 			match(T__4);
-			setState(133);
-			match(T__18);
-			setState(134);
+			setState(157);
+			match(T__22);
+			setState(158);
 			organizacao();
-			setState(135);
+			setState(159);
 			match(T__4);
-			setState(136);
-			match(T__19);
-			setState(137);
+			setState(160);
+			match(T__23);
+			setState(161);
 			atividade();
-			setState(138);
+			setState(162);
 			match(T__2);
 			}
 		}
@@ -1051,24 +1220,24 @@ public class T3Parser extends Parser {
 
 	public final TipoexperienciaContext tipoexperiencia() throws RecognitionException {
 		TipoexperienciaContext _localctx = new TipoexperienciaContext(_ctx, getState());
-		enterRule(_localctx, 32, RULE_tipoexperiencia);
+		enterRule(_localctx, 38, RULE_tipoexperiencia);
 		try {
-			setState(144);
+			setState(168);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__20:
+			case T__24:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(140);
-				match(T__20);
+				setState(164);
+				match(T__24);
 				 ((TipoexperienciaContext)_localctx).tipo =  1; 
 				}
 				break;
-			case T__21:
+			case T__25:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(142);
-				match(T__21);
+				setState(166);
+				match(T__25);
 				 ((TipoexperienciaContext)_localctx).tipo =  2; 
 				}
 				break;
@@ -1110,11 +1279,11 @@ public class T3Parser extends Parser {
 
 	public final OrganizacaoContext organizacao() throws RecognitionException {
 		OrganizacaoContext _localctx = new OrganizacaoContext(_ctx, getState());
-		enterRule(_localctx, 34, RULE_organizacao);
+		enterRule(_localctx, 40, RULE_organizacao);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(146);
+			setState(170);
 			match(CADEIA);
 			}
 		}
@@ -1152,11 +1321,11 @@ public class T3Parser extends Parser {
 
 	public final AtividadeContext atividade() throws RecognitionException {
 		AtividadeContext _localctx = new AtividadeContext(_ctx, getState());
-		enterRule(_localctx, 36, RULE_atividade);
+		enterRule(_localctx, 42, RULE_atividade);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(148);
+			setState(172);
 			match(CADEIA);
 			}
 		}
@@ -1197,15 +1366,15 @@ public class T3Parser extends Parser {
 
 	public final PeriodoContext periodo() throws RecognitionException {
 		PeriodoContext _localctx = new PeriodoContext(_ctx, getState());
-		enterRule(_localctx, 38, RULE_periodo);
+		enterRule(_localctx, 44, RULE_periodo);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(150);
+			setState(174);
 			match(DATA);
-			setState(151);
+			setState(175);
 			match(T__4);
-			setState(152);
+			setState(176);
 			match(DATA);
 			}
 		}
@@ -1246,25 +1415,25 @@ public class T3Parser extends Parser {
 
 	public final SecaoInfoAdicionalContext secaoInfoAdicional() throws RecognitionException {
 		SecaoInfoAdicionalContext _localctx = new SecaoInfoAdicionalContext(_ctx, getState());
-		enterRule(_localctx, 40, RULE_secaoInfoAdicional);
+		enterRule(_localctx, 46, RULE_secaoInfoAdicional);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(154);
-			match(T__22);
-			setState(155);
+			setState(178);
+			match(T__26);
+			setState(179);
 			match(T__1);
-			setState(156);
+			setState(180);
 			match(T__5);
-			setState(157);
+			setState(181);
 			match(CADEIA);
-			setState(158);
+			setState(182);
 			match(T__4);
-			setState(159);
-			match(T__9);
-			setState(160);
+			setState(183);
+			match(T__13);
+			setState(184);
 			match(CADEIA);
-			setState(161);
+			setState(185);
 			match(T__2);
 			}
 		}
@@ -1280,48 +1449,58 @@ public class T3Parser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3!\u00a6\4\2\t\2\4"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3&\u00be\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
 		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
-		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\3\2\3\2\3\2\3\2\3\2\3\2\3\3\3"+
-		"\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4"+
-		"\3\4\3\5\3\5\3\6\3\6\3\7\3\7\3\b\3\b\3\t\3\t\3\n\3\n\3\n\5\nT\n\n\3\13"+
-		"\7\13W\n\13\f\13\16\13Z\13\13\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f"+
-		"\3\f\3\f\3\r\7\ri\n\r\f\r\16\rl\13\r\3\16\3\16\3\16\3\16\3\16\3\16\3\16"+
-		"\3\16\3\16\3\17\6\17x\n\17\r\17\16\17y\3\20\3\20\5\20~\n\20\3\21\3\21"+
-		"\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\22"+
-		"\3\22\3\22\3\22\5\22\u0093\n\22\3\23\3\23\3\24\3\24\3\25\3\25\3\25\3\25"+
-		"\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\2\2\27\2\4\6\b\n\f"+
-		"\16\20\22\24\26\30\32\34\36 \"$&(*\2\4\4\2\3\3\r\16\4\2\32\32\36\36\2"+
-		"\u0097\2,\3\2\2\2\4\62\3\2\2\2\6;\3\2\2\2\bF\3\2\2\2\nH\3\2\2\2\fJ\3\2"+
-		"\2\2\16L\3\2\2\2\20N\3\2\2\2\22S\3\2\2\2\24X\3\2\2\2\26[\3\2\2\2\30j\3"+
-		"\2\2\2\32m\3\2\2\2\34w\3\2\2\2\36}\3\2\2\2 \177\3\2\2\2\"\u0092\3\2\2"+
-		"\2$\u0094\3\2\2\2&\u0096\3\2\2\2(\u0098\3\2\2\2*\u009c\3\2\2\2,-\7\3\2"+
-		"\2-.\7\4\2\2./\5\4\3\2/\60\7\5\2\2\60\61\5\22\n\2\61\3\3\2\2\2\62\63\7"+
-		"\6\2\2\63\64\5\b\5\2\64\65\7\7\2\2\65\66\7\b\2\2\66\67\5\n\6\2\678\7\7"+
-		"\2\289\7\t\2\29:\5\6\4\2:\5\3\2\2\2;<\7\4\2\2<=\7\n\2\2=>\5\16\b\2>?\7"+
-		"\7\2\2?@\7\13\2\2@A\5\20\t\2AB\7\7\2\2BC\7\f\2\2CD\5\f\7\2DE\7\5\2\2E"+
-		"\7\3\2\2\2FG\t\2\2\2G\t\3\2\2\2HI\7\32\2\2I\13\3\2\2\2JK\7\32\2\2K\r\3"+
-		"\2\2\2LM\7\32\2\2M\17\3\2\2\2NO\t\3\2\2O\21\3\2\2\2PT\5\24\13\2QT\5\30"+
-		"\r\2RT\5\34\17\2SP\3\2\2\2SQ\3\2\2\2SR\3\2\2\2T\23\3\2\2\2UW\5\26\f\2"+
-		"VU\3\2\2\2WZ\3\2\2\2XV\3\2\2\2XY\3\2\2\2Y\25\3\2\2\2ZX\3\2\2\2[\\\7\17"+
-		"\2\2\\]\7\4\2\2]^\7\b\2\2^_\7\32\2\2_`\7\7\2\2`a\7\20\2\2ab\7\37\2\2b"+
-		"c\7\7\2\2cd\7\21\2\2de\7\32\2\2ef\7\5\2\2f\27\3\2\2\2gi\5\32\16\2hg\3"+
-		"\2\2\2il\3\2\2\2jh\3\2\2\2jk\3\2\2\2k\31\3\2\2\2lj\3\2\2\2mn\7\22\2\2"+
-		"no\7\4\2\2op\7\b\2\2pq\7\32\2\2qr\7\7\2\2rs\7\f\2\2st\7\32\2\2tu\7\5\2"+
-		"\2u\33\3\2\2\2vx\5\36\20\2wv\3\2\2\2xy\3\2\2\2yw\3\2\2\2yz\3\2\2\2z\35"+
-		"\3\2\2\2{~\5 \21\2|~\5*\26\2}{\3\2\2\2}|\3\2\2\2~\37\3\2\2\2\177\u0080"+
-		"\7\23\2\2\u0080\u0081\7\4\2\2\u0081\u0082\7\6\2\2\u0082\u0083\5\"\22\2"+
-		"\u0083\u0084\7\7\2\2\u0084\u0085\7\24\2\2\u0085\u0086\5(\25\2\u0086\u0087"+
-		"\7\7\2\2\u0087\u0088\7\25\2\2\u0088\u0089\5$\23\2\u0089\u008a\7\7\2\2"+
-		"\u008a\u008b\7\26\2\2\u008b\u008c\5&\24\2\u008c\u008d\7\5\2\2\u008d!\3"+
-		"\2\2\2\u008e\u008f\7\27\2\2\u008f\u0093\b\22\1\2\u0090\u0091\7\30\2\2"+
-		"\u0091\u0093\b\22\1\2\u0092\u008e\3\2\2\2\u0092\u0090\3\2\2\2\u0093#\3"+
-		"\2\2\2\u0094\u0095\7\32\2\2\u0095%\3\2\2\2\u0096\u0097\7\32\2\2\u0097"+
-		"\'\3\2\2\2\u0098\u0099\7\37\2\2\u0099\u009a\7\7\2\2\u009a\u009b\7\37\2"+
-		"\2\u009b)\3\2\2\2\u009c\u009d\7\31\2\2\u009d\u009e\7\4\2\2\u009e\u009f"+
-		"\7\b\2\2\u009f\u00a0\7\32\2\2\u00a0\u00a1\7\7\2\2\u00a1\u00a2\7\f\2\2"+
-		"\u00a2\u00a3\7\32\2\2\u00a3\u00a4\7\5\2\2\u00a4+\3\2\2\2\bSXjy}\u0092";
+		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
+		"\3\2\7\2\64\n\2\f\2\16\2\67\13\2\3\2\3\2\3\2\3\2\3\2\3\2\3\3\3\3\3\3\3"+
+		"\3\3\3\3\3\3\3\3\3\3\3\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\6\3\6\3\6"+
+		"\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\b\3\b\3\t\3\t\3\n\3\n\3"+
+		"\13\3\13\3\f\3\f\3\r\3\r\3\r\5\rl\n\r\3\16\7\16o\n\16\f\16\16\16r\13\16"+
+		"\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\20\7\20"+
+		"\u0081\n\20\f\20\16\20\u0084\13\20\3\21\3\21\3\21\3\21\3\21\3\21\3\21"+
+		"\3\21\3\21\3\22\6\22\u0090\n\22\r\22\16\22\u0091\3\23\3\23\5\23\u0096"+
+		"\n\23\3\24\3\24\3\24\3\24\3\24\3\24\3\24\3\24\3\24\3\24\3\24\3\24\3\24"+
+		"\3\24\3\24\3\25\3\25\3\25\3\25\5\25\u00ab\n\25\3\26\3\26\3\27\3\27\3\30"+
+		"\3\30\3\30\3\30\3\31\3\31\3\31\3\31\3\31\3\31\3\31\3\31\3\31\3\31\2\2"+
+		"\32\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\2\4\4\2\3\3\21"+
+		"\22\4\2\37\37##\2\u00ad\2\65\3\2\2\2\4>\3\2\2\2\6G\3\2\2\2\bI\3\2\2\2"+
+		"\nP\3\2\2\2\fS\3\2\2\2\16^\3\2\2\2\20`\3\2\2\2\22b\3\2\2\2\24d\3\2\2\2"+
+		"\26f\3\2\2\2\30k\3\2\2\2\32p\3\2\2\2\34s\3\2\2\2\36\u0082\3\2\2\2 \u0085"+
+		"\3\2\2\2\"\u008f\3\2\2\2$\u0095\3\2\2\2&\u0097\3\2\2\2(\u00aa\3\2\2\2"+
+		"*\u00ac\3\2\2\2,\u00ae\3\2\2\2.\u00b0\3\2\2\2\60\u00b4\3\2\2\2\62\64\5"+
+		"\b\5\2\63\62\3\2\2\2\64\67\3\2\2\2\65\63\3\2\2\2\65\66\3\2\2\2\668\3\2"+
+		"\2\2\67\65\3\2\2\289\7\3\2\29:\7\4\2\2:;\5\4\3\2;<\7\5\2\2<=\5\30\r\2"+
+		"=\3\3\2\2\2>?\7\6\2\2?@\5\16\b\2@A\7\7\2\2AB\7\b\2\2BC\5\20\t\2CD\7\7"+
+		"\2\2DE\7\t\2\2EF\5\6\4\2F\5\3\2\2\2GH\7\36\2\2H\7\3\2\2\2IJ\7\n\2\2JK"+
+		"\5\6\4\2KL\7\13\2\2LM\5\n\6\2MN\7\f\2\2NO\5\f\7\2O\t\3\2\2\2PQ\7\r\2\2"+
+		"QR\b\6\1\2R\13\3\2\2\2ST\7\4\2\2TU\7\16\2\2UV\5\24\13\2VW\7\7\2\2WX\7"+
+		"\17\2\2XY\5\26\f\2YZ\7\7\2\2Z[\7\20\2\2[\\\5\22\n\2\\]\7\5\2\2]\r\3\2"+
+		"\2\2^_\t\2\2\2_\17\3\2\2\2`a\7\37\2\2a\21\3\2\2\2bc\7\37\2\2c\23\3\2\2"+
+		"\2de\7\37\2\2e\25\3\2\2\2fg\t\3\2\2g\27\3\2\2\2hl\5\32\16\2il\5\36\20"+
+		"\2jl\5\"\22\2kh\3\2\2\2ki\3\2\2\2kj\3\2\2\2l\31\3\2\2\2mo\5\34\17\2nm"+
+		"\3\2\2\2or\3\2\2\2pn\3\2\2\2pq\3\2\2\2q\33\3\2\2\2rp\3\2\2\2st\7\23\2"+
+		"\2tu\7\4\2\2uv\7\b\2\2vw\7\37\2\2wx\7\7\2\2xy\7\24\2\2yz\7$\2\2z{\7\7"+
+		"\2\2{|\7\25\2\2|}\7\37\2\2}~\7\5\2\2~\35\3\2\2\2\177\u0081\5 \21\2\u0080"+
+		"\177\3\2\2\2\u0081\u0084\3\2\2\2\u0082\u0080\3\2\2\2\u0082\u0083\3\2\2"+
+		"\2\u0083\37\3\2\2\2\u0084\u0082\3\2\2\2\u0085\u0086\7\26\2\2\u0086\u0087"+
+		"\7\4\2\2\u0087\u0088\7\b\2\2\u0088\u0089\7\37\2\2\u0089\u008a\7\7\2\2"+
+		"\u008a\u008b\7\20\2\2\u008b\u008c\7\37\2\2\u008c\u008d\7\5\2\2\u008d!"+
+		"\3\2\2\2\u008e\u0090\5$\23\2\u008f\u008e\3\2\2\2\u0090\u0091\3\2\2\2\u0091"+
+		"\u008f\3\2\2\2\u0091\u0092\3\2\2\2\u0092#\3\2\2\2\u0093\u0096\5&\24\2"+
+		"\u0094\u0096\5\60\31\2\u0095\u0093\3\2\2\2\u0095\u0094\3\2\2\2\u0096%"+
+		"\3\2\2\2\u0097\u0098\7\27\2\2\u0098\u0099\7\4\2\2\u0099\u009a\7\6\2\2"+
+		"\u009a\u009b\5(\25\2\u009b\u009c\7\7\2\2\u009c\u009d\7\30\2\2\u009d\u009e"+
+		"\5.\30\2\u009e\u009f\7\7\2\2\u009f\u00a0\7\31\2\2\u00a0\u00a1\5*\26\2"+
+		"\u00a1\u00a2\7\7\2\2\u00a2\u00a3\7\32\2\2\u00a3\u00a4\5,\27\2\u00a4\u00a5"+
+		"\7\5\2\2\u00a5\'\3\2\2\2\u00a6\u00a7\7\33\2\2\u00a7\u00ab\b\25\1\2\u00a8"+
+		"\u00a9\7\34\2\2\u00a9\u00ab\b\25\1\2\u00aa\u00a6\3\2\2\2\u00aa\u00a8\3"+
+		"\2\2\2\u00ab)\3\2\2\2\u00ac\u00ad\7\37\2\2\u00ad+\3\2\2\2\u00ae\u00af"+
+		"\7\37\2\2\u00af-\3\2\2\2\u00b0\u00b1\7$\2\2\u00b1\u00b2\7\7\2\2\u00b2"+
+		"\u00b3\7$\2\2\u00b3/\3\2\2\2\u00b4\u00b5\7\35\2\2\u00b5\u00b6\7\4\2\2"+
+		"\u00b6\u00b7\7\b\2\2\u00b7\u00b8\7\37\2\2\u00b8\u00b9\7\7\2\2\u00b9\u00ba"+
+		"\7\20\2\2\u00ba\u00bb\7\37\2\2\u00bb\u00bc\7\5\2\2\u00bc\61\3\2\2\2\t"+
+		"\65kp\u0082\u0091\u0095\u00aa";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

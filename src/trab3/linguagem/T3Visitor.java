@@ -23,6 +23,24 @@ public interface T3Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitParametros(T3Parser.ParametrosContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link T3Parser#identificador}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIdentificador(T3Parser.IdentificadorContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link T3Parser#var}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVar(T3Parser.VarContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link T3Parser#tipo_var}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTipo_var(T3Parser.Tipo_varContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link T3Parser#autor}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

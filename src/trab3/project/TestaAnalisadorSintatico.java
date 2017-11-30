@@ -30,12 +30,12 @@ public class TestaAnalisadorSintatico {
             T3Parser.SiteContext arvore = parser.site();
 //            
             // Se passou na análise sintática, faz a semântica
-//            if (!sp.isModificado()) {
-//                ParseTreeWalker walker = new ParseTreeWalker();
-//                AnalisadorSemantico listener = new AnalisadorSemantico(sp);
-//                walker.walk(listener, arvore);
-//            }
-//            
+            if (!sp.isModificado()) {
+                ParseTreeWalker walker = new ParseTreeWalker();
+                AnalisadorSemantico listener = new AnalisadorSemantico(sp);
+                walker.walk(listener, arvore);
+            }
+            
             // Se passou na sintática e na semântica, faz a compilação
             if (!sp.isModificado()) {
                 compilou = true;
@@ -55,7 +55,7 @@ public class TestaAnalisadorSintatico {
         }
         
         System.out.println(sp.toString());
-        createFile(sp.toString());
+        //createFile(sp.toString());
         
 //        try (FileWriter fw = new FileWriter(args[1])) {
 //            fw.write(sp.toString());
@@ -67,7 +67,8 @@ public class TestaAnalisadorSintatico {
     public static void createFile(String conteudo) {
         try{
             // Create new file
-            String path="/Users/Henrique/Desktop/t3-cc2/src/trab3/casosDeTeste/site/index.html";
+           // String path="/Users/Henrique/Desktop/t3-cc2/src/trab3/casosDeTeste/site/index.html";
+            String path="/home/lucas/Documents/CC2/T3/T3-Git/t3-cc2/src/trab3/casosDeTeste/site/index.html";
             File file = new File(path);
 
             // If file doesn't exists, then create it

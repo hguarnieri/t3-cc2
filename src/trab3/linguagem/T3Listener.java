@@ -28,6 +28,36 @@ public interface T3Listener extends ParseTreeListener {
 	 */
 	void exitParametros(T3Parser.ParametrosContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link T3Parser#identificador}.
+	 * @param ctx the parse tree
+	 */
+	void enterIdentificador(T3Parser.IdentificadorContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link T3Parser#identificador}.
+	 * @param ctx the parse tree
+	 */
+	void exitIdentificador(T3Parser.IdentificadorContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link T3Parser#var}.
+	 * @param ctx the parse tree
+	 */
+	void enterVar(T3Parser.VarContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link T3Parser#var}.
+	 * @param ctx the parse tree
+	 */
+	void exitVar(T3Parser.VarContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link T3Parser#tipo_var}.
+	 * @param ctx the parse tree
+	 */
+	void enterTipo_var(T3Parser.Tipo_varContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link T3Parser#tipo_var}.
+	 * @param ctx the parse tree
+	 */
+	void exitTipo_var(T3Parser.Tipo_varContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link T3Parser#autor}.
 	 * @param ctx the parse tree
 	 */

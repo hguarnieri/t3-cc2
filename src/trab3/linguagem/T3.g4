@@ -1,5 +1,9 @@
 grammar T3;
 
+IDENT
+    : ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '0'..'9' | '_')*
+    ;
+
 CADEIA
     : '"' ~('\n' | '\r' | '"')* '"'
     ;
@@ -29,11 +33,21 @@ WS
     ;
 
 site
-    : 'site' '(' parametros ')' estruturas;
+    : var* 'site' '(' parametros ')' estruturas;
 
 parametros
-    : 'tipo=' tiposite ',' 'titulo=' titulo ',' 'autor=' autor
+    : 'tipo=' tiposite ',' 'titulo=' titulo ',' 'autor=' identificador
     ;
+
+identificador
+    : IDENT
+    ;
+
+var:
+    'var' identificador ':' tipo_var '=' (autor);
+
+tipo_var returns [int tipo]
+    : 'autor' { $tipo=1; };
 
 autor
     : '(' 'nome=' nome ',' 'contato=' contato ',' 'descricao=' descricao ')'
