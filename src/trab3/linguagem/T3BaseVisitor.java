@@ -17,6 +17,13 @@ public class T3BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements T3V
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitDecl_site(T3Parser.Decl_siteContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitSite(T3Parser.SiteContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -31,21 +38,14 @@ public class T3BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements T3V
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitIdentificador(T3Parser.IdentificadorContext ctx) { return visitChildren(ctx); }
+	@Override public T visitDecl_autor(T3Parser.Decl_autorContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitVar(T3Parser.VarContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitTipo_var(T3Parser.Tipo_varContext ctx) { return visitChildren(ctx); }
+	@Override public T visitAutor_id(T3Parser.Autor_idContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -115,20 +115,6 @@ public class T3BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements T3V
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitEstruturasite(T3Parser.EstruturasiteContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitItem(T3Parser.ItemContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
 	@Override public T visitEstruturacv(T3Parser.EstruturacvContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -178,5 +164,12 @@ public class T3BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements T3V
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitSecaoInfoAdicional(T3Parser.SecaoInfoAdicionalContext ctx) { return visitChildren(ctx); }
+	@Override public T visitSecaoAtividade(T3Parser.SecaoAtividadeContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitExperiencia_id(T3Parser.Experiencia_idContext ctx) { return visitChildren(ctx); }
 }

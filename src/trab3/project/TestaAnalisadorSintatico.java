@@ -27,7 +27,7 @@ public class TestaAnalisadorSintatico {
             parser.addErrorListener(new T3ErrorListener(sp));
             
             // Faz a análise sintática
-            T3Parser.SiteContext arvore = parser.site();
+            T3Parser.Decl_siteContext arvore = parser.decl_site();
 //            
             // Se passou na análise sintática, faz a semântica
             if (!sp.isModificado()) {
@@ -37,12 +37,12 @@ public class TestaAnalisadorSintatico {
             }
             
             // Se passou na sintática e na semântica, faz a compilação
-            if (!sp.isModificado()) {
-                compilou = true;
-                ParseTreeWalker walker = new ParseTreeWalker();
-                GeradorCodigo listener = new GeradorCodigo(sp);
-                walker.walk(listener, arvore);
-            }
+//            if (!sp.isModificado()) {
+//                compilou = true;
+//                ParseTreeWalker walker = new ParseTreeWalker();
+//                GeradorCodigo listener = new GeradorCodigo(sp);
+//                walker.walk(listener, arvore);
+//            }
         } catch (ParseCancellationException pce) {
             if (pce.getMessage() != null) { 
                   sp.println(pce.getMessage());
@@ -50,9 +50,9 @@ public class TestaAnalisadorSintatico {
         }
         
         // Caso não compilar, adiciona o texto ao final do teste
-        if (!compilou) {
-            sp.println("Fim da compilacao");
-        }
+//        if (!compilou) {
+//            sp.println("Fim da compilacao");
+//        }
         
         System.out.println(sp.toString());
         //createFile(sp.toString());

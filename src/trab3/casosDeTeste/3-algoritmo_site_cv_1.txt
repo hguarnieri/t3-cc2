@@ -1,13 +1,18 @@
-var autor1 : autor = (nome="Henrique Guarnieri",
+autor(
+    id=1,
+    nome="Henrique Guarnieri",
     contato="henrique@grupo11.com",
-    descricao="Aluno de Ciencia da Computacao da turma de 2012")
+    descricao="Aluno de Ciencia da Computacao da turma de 2012"
+)
 
-site(tipo=cv,
+site(
+    tipo=cv,
     titulo="Curriculo Vittae",
-    autor=autor1)
+    autor=1
+)
 
-experiencia(tipo=educacional, periodo=01/03/2012,31/12/2017, organizacao="UFSCar", atividade="Ciencia da Computação")
-experiencia(tipo=educacional, periodo=01/03/2015,31/12/2015, organizacao="University of Adelaide", atividade="Computer Science")
-experiencia(tipo=profissional, periodo=01/08/2015,29/02/2016, organizacao="University of Adelaide", atividade="Programmer")
-infoAdicional(titulo="Voluntário na Campus Party", descricao="Auxilio no trabalho de palco de desenvolvimento")
-infoAdicional(titulo="Hackathon FIESP", descricao="Desenvolvimento de um aplicativo para controle de Vacinas")
+experiencia(id=1, tipo=educacional, periodo=01/03/2012,31/12/2017, organizacao="UFSCar", atividade="Ciencia da Computação")
+experiencia(id=2, tipo=educacional, periodo=01/03/2015,31/12/2015, organizacao="University of Adelaide", atividade="Computer Science")
+experiencia(id=3, tipo=profissional, periodo=01/08/2015,29/02/2016, organizacao="University of Adelaide", atividade="Programmer")
+atividade(titulo="Voluntário na Campus Party", descricao="Auxilio no trabalho de palco de desenvolvimento", experiencia=1)
+atividade(titulo="Hackathon FIESP", descricao="Desenvolvimento de um aplicativo para controle de Vacinas", experiencia=3)

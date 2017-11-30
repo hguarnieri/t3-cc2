@@ -11,6 +11,12 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface T3Visitor<T> extends ParseTreeVisitor<T> {
 	/**
+	 * Visit a parse tree produced by {@link T3Parser#decl_site}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDecl_site(T3Parser.Decl_siteContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link T3Parser#site}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -23,23 +29,17 @@ public interface T3Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitParametros(T3Parser.ParametrosContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link T3Parser#identificador}.
+	 * Visit a parse tree produced by {@link T3Parser#decl_autor}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitIdentificador(T3Parser.IdentificadorContext ctx);
+	T visitDecl_autor(T3Parser.Decl_autorContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link T3Parser#var}.
+	 * Visit a parse tree produced by {@link T3Parser#autor_id}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitVar(T3Parser.VarContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link T3Parser#tipo_var}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitTipo_var(T3Parser.Tipo_varContext ctx);
+	T visitAutor_id(T3Parser.Autor_idContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link T3Parser#autor}.
 	 * @param ctx the parse tree
@@ -95,18 +95,6 @@ public interface T3Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitPost(T3Parser.PostContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link T3Parser#estruturasite}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitEstruturasite(T3Parser.EstruturasiteContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link T3Parser#item}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitItem(T3Parser.ItemContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link T3Parser#estruturacv}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -149,9 +137,15 @@ public interface T3Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitPeriodo(T3Parser.PeriodoContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link T3Parser#secaoInfoAdicional}.
+	 * Visit a parse tree produced by {@link T3Parser#secaoAtividade}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSecaoInfoAdicional(T3Parser.SecaoInfoAdicionalContext ctx);
+	T visitSecaoAtividade(T3Parser.SecaoAtividadeContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link T3Parser#experiencia_id}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExperiencia_id(T3Parser.Experiencia_idContext ctx);
 }

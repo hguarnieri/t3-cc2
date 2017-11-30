@@ -16,6 +16,18 @@ public class T3BaseListener implements T3Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterDecl_site(T3Parser.Decl_siteContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDecl_site(T3Parser.Decl_siteContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterSite(T3Parser.SiteContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -40,37 +52,25 @@ public class T3BaseListener implements T3Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIdentificador(T3Parser.IdentificadorContext ctx) { }
+	@Override public void enterDecl_autor(T3Parser.Decl_autorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIdentificador(T3Parser.IdentificadorContext ctx) { }
+	@Override public void exitDecl_autor(T3Parser.Decl_autorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVar(T3Parser.VarContext ctx) { }
+	@Override public void enterAutor_id(T3Parser.Autor_idContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVar(T3Parser.VarContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterTipo_var(T3Parser.Tipo_varContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitTipo_var(T3Parser.Tipo_varContext ctx) { }
+	@Override public void exitAutor_id(T3Parser.Autor_idContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -184,30 +184,6 @@ public class T3BaseListener implements T3Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEstruturasite(T3Parser.EstruturasiteContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitEstruturasite(T3Parser.EstruturasiteContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterItem(T3Parser.ItemContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitItem(T3Parser.ItemContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterEstruturacv(T3Parser.EstruturacvContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -292,13 +268,25 @@ public class T3BaseListener implements T3Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSecaoInfoAdicional(T3Parser.SecaoInfoAdicionalContext ctx) { }
+	@Override public void enterSecaoAtividade(T3Parser.SecaoAtividadeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSecaoInfoAdicional(T3Parser.SecaoInfoAdicionalContext ctx) { }
+	@Override public void exitSecaoAtividade(T3Parser.SecaoAtividadeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExperiencia_id(T3Parser.Experiencia_idContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExperiencia_id(T3Parser.Experiencia_idContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

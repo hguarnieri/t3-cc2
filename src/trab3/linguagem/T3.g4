@@ -32,25 +32,24 @@ WS
     : (' ' | '\t' | '\r' | '\n') {skip();}
     ;
 
+decl_site
+    : decl_autor* | site;
+
 site
-    : var* 'site' '(' parametros ')' estruturas;
+    : 'site' '(' parametros ')' estruturas;
 
 parametros
-    : 'tipo=' tiposite ',' 'titulo=' titulo ',' 'autor=' identificador
+    : 'tipo=' tiposite ',' 'titulo=' titulo ',' 'autor=' autor_id
     ;
 
-identificador
-    : IDENT
-    ;
+decl_autor:
+    'autor' '(' autor ')' | site;
 
-var:
-    'var' identificador ':' tipo_var '=' (autor);
-
-tipo_var returns [int tipo]
-    : 'autor' { $tipo=1; };
+autor_id
+    : NUM_INT;
 
 autor
-    : '(' 'nome=' nome ',' 'contato=' contato ',' 'descricao=' descricao ')'
+    : 'id=' autor_id ',' 'nome=' nome ',' 'contato=' contato ',' 'descricao=' descricao
     ;
 
 tiposite
@@ -69,7 +68,7 @@ contato
     : EMAIL | CADEIA;
 
 estruturas
-    : estruturablog | estruturasite | estruturacv;
+    : estruturablog | estruturacv;
 
 estruturablog
     : (post)*;
@@ -77,20 +76,14 @@ estruturablog
 post
     : 'post' '(' 'titulo=' CADEIA ',' 'data=' DATA ',' 'conteudo=' CADEIA ')';
 
-estruturasite
-    : (item)*;
-
-item
-    : 'item' '(' 'titulo=' CADEIA ',' 'descricao=' CADEIA ')';
-
 estruturacv
     : (secoes)+;
 
 secoes
-    : secaoExperiencia | secaoInfoAdicional;
+    : secaoExperiencia | secaoAtividade;
 
 secaoExperiencia
-    : 'experiencia' '(' 'tipo=' tipoexperiencia ',' 'periodo=' periodo ',' 
+    : 'experiencia' '(' 'id=' experiencia_id ',' 'tipo=' tipoexperiencia ',' 'periodo=' periodo ',' 
         'organizacao=' organizacao ',' 'atividade=' atividade ')';
 
 tipoexperiencia returns [int tipo]
@@ -105,7 +98,10 @@ atividade
 periodo
     : DATA ',' DATA;
 
-secaoInfoAdicional
-    : 'infoAdicional' '(' 'titulo=' CADEIA ',' 'descricao=' CADEIA ')';
+secaoAtividade
+    : 'atividade' '(' 'titulo=' titulo ',' 'descricao=' descricao ',' 'experiencia=' experiencia_id ')';
+
+experiencia_id
+    : NUM_INT;
 
 ERROR: . { throw new ParseCancellationException("Linha " + getLine() + ": "+ getText() +" - simbolo nao identificado"); };
