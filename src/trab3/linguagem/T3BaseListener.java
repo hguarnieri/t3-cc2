@@ -136,6 +136,18 @@ public class T3BaseListener implements T3Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterConteudo(T3Parser.ConteudoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitConteudo(T3Parser.ConteudoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterContato(T3Parser.ContatoContext ctx) { }
 	/**
 	 * {@inheritDoc}

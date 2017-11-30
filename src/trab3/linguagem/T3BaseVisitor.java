@@ -87,6 +87,13 @@ public class T3BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements T3V
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitConteudo(T3Parser.ConteudoContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitContato(T3Parser.ContatoContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}

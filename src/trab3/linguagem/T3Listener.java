@@ -108,6 +108,16 @@ public interface T3Listener extends ParseTreeListener {
 	 */
 	void exitNome(T3Parser.NomeContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link T3Parser#conteudo}.
+	 * @param ctx the parse tree
+	 */
+	void enterConteudo(T3Parser.ConteudoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link T3Parser#conteudo}.
+	 * @param ctx the parse tree
+	 */
+	void exitConteudo(T3Parser.ConteudoContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link T3Parser#contato}.
 	 * @param ctx the parse tree
 	 */

@@ -71,6 +71,12 @@ public interface T3Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitNome(T3Parser.NomeContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link T3Parser#conteudo}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitConteudo(T3Parser.ConteudoContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link T3Parser#contato}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

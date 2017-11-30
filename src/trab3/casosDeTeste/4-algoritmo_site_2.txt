@@ -1,3 +1,0 @@
-site(tipo=site,titulo="Morena Brigadeiro",autor=(nome="Lucas",contato="morenabrigadeiro@gmail.com",descricao="Morena Brigadeiro esta a mais de 10 anos presente na cidade de Mogi das Cruzes oferecendo brigadeiros gourmet de qualidade para pessoas que gostam de doces de qualidade."))
-item(titulo="Brigadeiros Gourmet",descricao="Mais de 40 sabores de brigadeiros entre eles os sabores: tradicional, leite ninho com nutella, pacoca e meio amargo")
-item(titulo="Bolos em pote",descricao="Deliciosos bolos em pote que irao fazer voce nunca mais querer comer outra coisa")

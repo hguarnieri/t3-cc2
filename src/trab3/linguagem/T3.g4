@@ -33,7 +33,9 @@ WS
     ;
 
 decl_site
-    : decl_autor* | site;
+    : decl_autor* 
+    | site
+    ;
 
 site
     : 'site' '(' parametros ')' estruturas;
@@ -42,18 +44,21 @@ parametros
     : 'tipo=' tiposite ',' 'titulo=' titulo ',' 'autor=' autor_id
     ;
 
-decl_autor:
-    'autor' '(' autor ')' | site;
+decl_autor
+    : 'autor' '(' autor ')' | site
+    ;
 
 autor_id
-    : NUM_INT;
+    : NUM_INT
+    ;
 
 autor
     : 'id=' autor_id ',' 'nome=' nome ',' 'contato=' contato ',' 'descricao=' descricao
     ;
 
-tiposite
-    : 'blog' | 'cv' | 'site';
+tiposite returns [String tipo]
+    : 'blog' { $tipo = "blog"; } | 'cv' { $tipo = "cv"; }
+;
 
 titulo
     : CADEIA;
@@ -64,6 +69,9 @@ descricao
 nome
     : CADEIA;
 
+conteudo
+    : CADEIA;
+
 contato
     : EMAIL | CADEIA;
 
@@ -71,13 +79,14 @@ estruturas
     : estruturablog | estruturacv;
 
 estruturablog
-    : (post)*;
+    : (post)+;
 
 post
-    : 'post' '(' 'titulo=' CADEIA ',' 'data=' DATA ',' 'conteudo=' CADEIA ')';
+    : 'post' '(' 'autor=' autor_id ',' 'titulo=' titulo ',' 'data=' DATA ',' 'conteudo=' conteudo ')';
 
 estruturacv
-    : (secoes)+;
+    : (secoes)+
+    ;
 
 secoes
     : secaoExperiencia | secaoAtividade;
