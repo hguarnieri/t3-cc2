@@ -28,10 +28,15 @@ public class TestaAnalisadorSintatico {
             // Faz a análise sintática
             T3Parser.Decl_siteContext arvore = parser.decl_site();
             
-            // Se passou na análise sintática, faz a semântica
+            // Se passou na análise sintática, faz a semântica, e caso sucesso,
+            // gera o código
             if (!sp.isModificado()) {
                 ParseTreeWalker walker = new ParseTreeWalker();
-                AnalisadorSemantico listener = new AnalisadorSemantico(sp);
+                AnalisadorSemanticoGeradorDeCodigo listener = 
+                        new AnalisadorSemanticoGeradorDeCodigo(
+                                sp
+                        );
+                
                 walker.walk(listener, arvore);
             }
         } catch (ParseCancellationException pce) {
@@ -40,6 +45,7 @@ public class TestaAnalisadorSintatico {
             }
         }
         
-        System.out.println(sp.toString());
+        sp.println("Fim da compilacao");
+        System.out.print(sp.toString());
     }
 }

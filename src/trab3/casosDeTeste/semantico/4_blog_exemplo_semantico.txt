@@ -1,0 +1,44 @@
+autor(
+    id=1,
+    nome="Batman",
+    contato="dark.knight@gmail.com",
+    descricao="Best detective ever"
+)
+
+autor(
+    id=2,
+    nome="Super Homem",
+    contato="supeman@gmail.com",
+    descricao="Our favorite alien"
+)
+
+autor(
+    id=3,
+    nome="Mulher Maravilha",
+    contato="wonderwoman@gmail.com",
+    descricao="A filha da deusa original"
+)
+
+autor(
+    id=4,
+    nome="Flash",
+    contato="theflash@gmail.com",
+    descricao="Cada mergulho é um... pera..."
+)
+
+autor(
+    id=5,
+    nome="Aquaman",
+    contato="aquaman@gmail.com",
+    descricao="Dublador do original de 'Procurando Nemo'"
+)
+
+site(
+    tipo=blog,
+    titulo="Liga Da Justiça nas interwebs",
+    autor=1)
+
+post(autor=10, titulo="Aproveitando o lançamento do filme",data=01/11/2017,conteudo="Este blog tem o intuito de mostrar as nossas impressões sobre o nosso filme que está para ser lançado")
+post(autor=1, titulo="Cruzando os dedos",data=10/11/2017,conteudo="Estamos aqui de dedos cruzados esperando o resultado. Falta pouco, mas pensando na fama dos filmes de heróis da DC... Sentimos medo, muito medo...")
+post(autor=4, titulo="Primeirinho!",data=16/11/2017,conteudo="Por incrível que pareça o filme ficou muito bom! Mas agora vou ter que esperar os outros terminarem de assistir. Será que eles vão ficar bravos se eu der spoilers antes que eles terminem a abertura do filme?")
+post(autor=3, titulo="Quase tão bom quanto o meu",data=16/11/2017,conteudo="Tenho que dar o braço a torcer, esse filme ficou quase tão bom quanto o meu próprio filme!")

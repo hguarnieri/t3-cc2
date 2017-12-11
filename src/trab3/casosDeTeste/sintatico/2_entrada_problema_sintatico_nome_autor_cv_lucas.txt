@@ -1,0 +1,24 @@
+autor(
+    id=1,
+    nom="Lucas Hauptmann Pereira",
+    contato="lucass.hauptmann@gmail.com, Fone: 11 97319-4440/ 16 98105-5445",descricao="Brasileiro, 26 anos, masculino e solteiro. Estudante de Bacharelado em Ciência da Computação na Universidade Federal de São Carlos e interessado em como a tecnologia pode melhorar a vida das pessoas e a criar um futuro mais sustentável e próspero para nossa sociedade. Áreas de interesse incluem Gerenciamento de Projeto, Engenharia de Software, Desenvolvimento Web e Mobile, User Experience, Sustentabilidade e Trabalhos Sociais."
+)
+
+site(
+    tipo=cv,
+    titulo="Curriculo Vittae",
+    autor=1
+)
+
+
+experiencia(id=1, tipo=profissional, periodo=01/09/2014,01/08/2015, organizacao=" VI Secomp - Semana da Computação UFScar ", atividade="Coordenador Geral")
+experiencia(id=2, tipo=profissional, periodo=01/08/2014,01/12/2014, organizacao=" Campanha  “Natal Solidário” ", atividade=" Designer e Desenvolvedor Web.")
+experiencia(id=3, tipo=profissional, periodo=01/08/2012,01/07/2013, organizacao="  CATI JR - Empresa Júnior ", atividade=" Gerente de Marketing ")
+
+experiencia(id=4, tipo=educacional, periodo=01/07/2015,31/12/2017, organizacao=" Royal Melbourne Institute of Technology University, Melbourne, VIC, Australia", atividade="Ciência Sem Fronteiras - Bolsista CNPQ")
+
+experiencia(id=5, tipo=educacional, periodo=01/03/2012,31/06/2018, organizacao="Universidade Federal de São Carlos, São Carlos, SP, Brasil
+", atividade="Bacharelado em Ciência da Computação")
+
+atividade(titulo="Voluntário na Campus Party", descricao="Auxilio no trabalho de palco de desenvolvimento", experiencia=5)
+atividade(titulo="Hackathon FIESP", descricao="Desenvolvimento de um aplicativo para controle de Vacinas", experiencia=5)

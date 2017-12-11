@@ -1,0 +1,18 @@
+autor(
+    id=1,
+    nome="Bruce Wayne",
+    contato="owner@wayneenterprises.com",
+    descricao="Magnata, filantropo, vigilante e maior detetive do mundo"
+)
+
+site(
+    tipo=cv,
+    titulo="Curriculo Vittae",
+    autor=1
+)
+
+experiencia(id=1, tipo=educacional, periodo=25/08/1985,31/12/1995, organizacao="Gotham City Martial Arts Center", atividade="Caratê, judô, muay thai, jiujitsu, krav magá, boxe, sambo")
+experiencia(id=2, tipo=educacional, periodo=01/02/1994,31/12/1998, organizacao="University of Gotham City", atividade="Criminology")
+experiencia(id=3, tipo=educacional, periodo=01/02/1994,31/12/1998, organizacao="University of Gotham City", atividade="Chemistry")
+atividade(titulo="Executivo em Empresas Wayne", descricao="Auxilio na tomada de decisões das empresas da minha família", experiencia=4)
+atividade(titulo="Vigilante noturno", descricao="Auxilio o comissário Gordon e toda equipe de polícia de Gotham City no combate ao crime", experiencia=1)

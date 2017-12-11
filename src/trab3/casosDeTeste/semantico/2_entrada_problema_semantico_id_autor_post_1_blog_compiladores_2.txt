@@ -1,0 +1,30 @@
+autor(
+    id=2,
+    nome="Henrique",
+    contato="h.guarnieri@gmail.com",
+    descricao="Mito"
+)
+
+autor(
+    id=3,
+    nome="Bruno",
+    contato="bruno.campuss@gmail.com",
+    descricao="Mr. Campus Party Conteudos"
+)
+
+autor(
+    id=4,
+    nome="Ricardo",
+    contato="r.morimoto@gmail.com",
+    descricao="O mestre da arte do bootstrap"
+)
+
+site(
+    tipo=blog,
+    titulo="Compiladores 2",
+    autor=1)
+
+post(autor=1, titulo="Depois de compiladores 1...",data=10/12/2017,conteudo="Quando todos pensavamos que estariamos livres de compiladores, eis que surge CC2!!")
+post(autor=2, titulo="Minha vida mudou depois de CC2",data=10/11/2017,conteudo="No começo foi dificil, nao estamos entendendo nada, pensamos até em desistir! Mas antes de desistir decidimos dar outra chance a nós mesmos e fomos conversar com o professor Lucrédio!. Eles reassenedeu a chama do compilador no coração de cada um! Começamos a nos reunir toda semana e colocamos em prática TODO o conhecimento acomulado durante tooodo o semestre e de repente, o trabalho começou a fluir! ")
+post(autor=3, titulo="O que sera de nós quando CC2 acabar!?",data=10/11/2017,conteudo="Agora que nos acostumamos a visitar o professor toda quinta feira as 14:00 hrs o que será de nós quando a disciplina acabar? O que faremos? O que irá substituir esse compromisso???")
+post(autor=4, titulo="Só nos resta aceitar",data=10/11/2017,conteudo="Todo ciclo chega ao fim, e só nos resta aceitar.")
